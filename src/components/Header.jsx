@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { siteConfig } from '../data/resume'
+import Logo from './Logo'
 
 export const navItems = [
   { id: 'about', label: 'About', section: 'about' },
@@ -43,7 +44,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link to="/" className="logo-mark" aria-label="Home">
-          <img src="/logo.png" alt="Nathaniel Nelson" className="logo-image" />
+          <Logo />
         </Link>
 
         <nav className="nav">

@@ -78,9 +78,9 @@ a:hover {
   flex-shrink: 0;
 }
 
-.logo-image {
+.logo-svg {
   display: block;
-  height: 2.4rem;
+  height: 2.1rem;
   width: auto;
 }
 

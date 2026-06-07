@@ -43,7 +43,7 @@ export default function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link to="/" className="logo-mark" aria-label="Home">
-          NN
+          <img src="/logo.png" alt="Nathaniel Nelson" className="logo-image" />
         </Link>
 
         <nav className="nav">

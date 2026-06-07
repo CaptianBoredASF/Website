@@ -66,23 +66,22 @@ a:hover {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 0.9rem 0;
 }
 
 .logo-mark {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.75rem;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
+  justify-content: flex-start;
   text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  display: block;
+  height: 2.4rem;
+  width: auto;
 }
 
 .nav {
@@ -763,8 +762,18 @@ a:hover {
 
 @media (max-width: 900px) {
   .header-inner {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    justify-items: stretch;
+  }
+
+  .logo-mark {
+    justify-self: start;
+  }
+
+  .nav {
+    grid-column: 1 / -1;
+    justify-content: center;
   }
 
   .btn-header-resume {

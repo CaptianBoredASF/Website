@@ -190,22 +190,14 @@ export const caseStudies = [
   },
 ]
 
-// Replace sample URLs with your Tableau Public dashboard embed links.
+// Tableau embed URL: Tableau Public → Share → Copy embed code → use the url value.
 export const tableauProjects = [
   {
-    id: 'sales-dashboard',
-    title: 'Sales Performance Dashboard',
+    id: 'first-project',
+    title: 'First Project',
     description:
-      'Interactive view of regional sales trends, YoY growth, and product mix.',
-    url: 'https://public.tableau.com/views/SampleSuperstore/SuperstoreDashboard?:language=en-US&:display_count=n&:origin=viz_share_link',
-    tags: ['Sales', 'KPIs', 'Tableau'],
-  },
-  {
-    id: 'customer-analytics',
-    title: 'Customer Analytics',
-    description:
-      'Segmentation and retention analysis with drill-down filters.',
-    url: 'https://public.tableau.com/views/SampleSuperstore/CustomerAnalysis?:language=en-US&:display_count=n&:origin=viz_share_link',
-    tags: ['Customer', 'Segmentation'],
+      'Revenue and inventory analysis by product category with KPIs for revenue, units sold, average price, and stock levels.',
+    url: 'https://public.tableau.com/views/FirstProject_17108428028600/Dashboard1?:language=en-US&:display_count=y&:origin=viz_share_link',
+    tags: ['Revenue', 'Inventory', 'Tableau'],
   },
 ]

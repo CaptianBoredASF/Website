@@ -15,7 +15,7 @@ export const siteConfig = {
 
 export const about = {
   summary:
-    'Program and Operations Leader with 10+ years of experience driving strategic, cross-functional supply chain and operations initiatives within fast-paced fulfillment environments. Deep expertise in end-to-end process ownership, inventory flow optimization, and capacity-constrained operations. Proven ability to lead diverse teams across multiple concurrent projects, leverage AI-driven tools and data analytics to build and scale solutions, and influence senior leadership to deliver sustainable improvements in speed, quality, and operational efficiency.',
+    'Beyond my professional responsibilities, I spend a significant amount of time studying emerging technologies and how they are reshaping business. I am particularly interested in artificial intelligence, large language models, automation, and advanced analytics, and regularly build projects to better understand their practical applications. I enjoy connecting ideas across disciplines, challenging conventional thinking, and exploring new ways organizations can improve decision making, customer experiences, and operational performance. The most rewarding part of my career has always been learning, adapting, and helping organizations navigate what\'s next.',
 }
 
 export const experience = [

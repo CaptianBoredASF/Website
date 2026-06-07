@@ -923,7 +923,9 @@ a:hover {
 }
 
 .toolbox-image-wrap {
-  width: 100%;
+  width: calc(100vw - 2in);
+  max-width: calc(100vw - 2in);
+  margin-left: calc(50% - 50vw + 1in);
   height: 4in;
   padding: 0;
   border-radius: calc(var(--radius) - 4px);
@@ -999,6 +1001,12 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .toolbox-image-wrap {
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    margin-left: calc(50% - 50vw + 1rem);
+  }
+
   .nav {
     width: 100%;
     justify-content: center;

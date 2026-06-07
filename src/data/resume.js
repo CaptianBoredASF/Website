@@ -20,15 +20,14 @@ export const about = {
 
 export const experience = [
   {
-    role: 'Senior Manager, Head of Compliance Department',
+    role: 'Senior Program Manager, Vendor Compliance',
     company: 'Chewy',
-    location: 'Fort Lauderdale, FL',
     period: 'Aug 2024 — Present',
     highlights: [
-      'Lead a team of 6 across program management, business engineering, and analytics; own governance and multi-year initiatives balancing cost recovery, service reliability, and scalable growth.',
-      'Transformed vendor compliance into a data-driven revenue engine — $20M incremental annual value, 15% labor efficiency gain, 30%+ defect rate reduction.',
-      'Launched enterprise chargeback platform across 10 defect categories (SPARK-enabled), generating $12M in incremental annual revenue.',
-      'Led 100+ executive vendor collaboration reviews driving $30M+ in automation and equipment investments.',
+      'Lead Chewy\'s enterprise Vendor Compliance organization, managing a team of 6 across Program Management, Business Engineering, and Analytics while defining strategy, governance, and multi-year transformation initiatives supporting a multi-billion-dollar supply chain network.',
+      'Transformed vendor compliance into a strategic business function, delivering $20M in annual value, improving labor efficiency by 15%, and reducing vendor defects by 30%+ through data-driven process redesign and performance management.',
+      'Built and launched a net-new enterprise chargeback platform spanning 10 defect categories, generating $12M in annual revenue while modernizing legacy processes through scalable SPARK-based automation.',
+      'Influenced executive investment decisions through 100+ supplier and leadership reviews, driving $30M+ in automation, quality, and operational infrastructure investments that improved service reliability, supplier performance, and customer experience.',
     ],
   },
   {

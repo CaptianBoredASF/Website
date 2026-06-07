@@ -968,6 +968,11 @@ a:hover {
   object-position: center;
 }
 
+.toolbox-grid-item:first-child .toolbox-grid-image {
+  transform: scaleY(1.08);
+  transform-origin: top center;
+}
+
 .toolbox-grid-caption {
   margin: 0;
   padding: 0.6rem 0.5rem;

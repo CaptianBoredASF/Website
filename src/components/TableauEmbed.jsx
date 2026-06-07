@@ -1,43 +1,32 @@
-import { useEffect, useRef } from 'react'
+function toEmbedUrl(url) {
+  const base = url.split('?:')[0].split('?')[0]
+  return `${base}?:showVizHome=no&:embed=true&:display_count=no`
+}
+
+function toPublicUrl(url) {
+  return url.split('?:')[0].split('?')[0]
+}
 
 export default function TableauEmbed({ url, title }) {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container || !url) return
-
-    container.innerHTML = ''
-
-    const script = document.createElement('script')
-    script.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'
-    script.async = true
-    script.onload = () => {
-      if (window.tableau && container) {
-        new window.tableau.Viz(container, {
-          width: '100%',
-          height: '600',
-          url,
-          hideTabs: true,
-          hideToolbar: false,
-        })
-      }
-    }
-
-    document.body.appendChild(script)
-
-    return () => {
-      container.innerHTML = ''
-      if (script.parentNode) script.parentNode.removeChild(script)
-    }
-  }, [url])
+  const embedUrl = toEmbedUrl(url)
 
   return (
-    <div
-      ref={containerRef}
-      className="tableau-embed"
-      role="region"
-      aria-label={title}
-    />
+    <div className="tableau-embed" role="region" aria-label={title}>
+      <iframe
+        src={embedUrl}
+        title={title}
+        loading="lazy"
+        allowFullScreen
+        className="tableau-iframe"
+      />
+      <p className="tableau-fallback">
+        Dashboard not loading?{' '}
+        <a href={toPublicUrl(url)} target="_blank" rel="noopener noreferrer">
+          Open it on Tableau Public
+        </a>
+      </p>
+    </div>
   )
 }
+
+export { toPublicUrl }

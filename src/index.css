@@ -919,26 +919,32 @@ a:hover {
 }
 
 .toolbox-detail {
+  width: calc(100vw - 2in);
+  max-width: calc(100vw - 2in);
+  margin-left: calc(50% - 50vw + 1in);
   text-align: left;
 }
 
 .toolbox-image-wrap {
-  width: calc(100vw - 2in);
-  max-width: calc(100vw - 2in);
-  margin-left: calc(50% - 50vw + 1in);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 4in;
-  padding: 0;
+  padding: 0.5rem;
   border-radius: calc(var(--radius) - 4px);
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   background: #ffffff;
   border: 1px solid #dbeafe;
 }
 
 .toolbox-image {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
   height: auto;
+  object-fit: contain;
 }
 
 .site-footer {
@@ -1001,7 +1007,7 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  .toolbox-image-wrap {
+  .toolbox-detail {
     width: calc(100vw - 2rem);
     max-width: calc(100vw - 2rem);
     margin-left: calc(50% - 50vw + 1rem);

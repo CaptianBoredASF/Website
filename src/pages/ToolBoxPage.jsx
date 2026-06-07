@@ -23,6 +23,18 @@ export default function ToolBoxPage() {
         <section className="section section-alt">
           <div className="container">
             <div className="toolbox-grid-wrap">
+              <div className="toolbox-intro-box">
+                <h2 className="toolbox-intro-title">Demand Planning:</h2>
+                <p className="toolbox-intro-text">
+                  Demand planning serves as the decision engine of the supply chain, connecting customer
+                  demand, inventory strategy, supplier execution, and financial objectives. High-performing
+                  organizations leverage advanced analytics, forecast governance, and scenario-based planning
+                  to optimize working capital, protect service levels, and mitigate supply risk. The result
+                  is a more responsive, scalable operation capable of supporting sustainable growth in dynamic
+                  market environments.
+                </p>
+              </div>
+
               <div className="toolbox-grid">
                 {slots.map((item, index) => (
                   <article key={item?.id ?? `empty-${index}`} className="toolbox-grid-item">

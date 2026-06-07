@@ -944,6 +944,9 @@ a:hover {
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--accent);
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .toolbox-intro-text {

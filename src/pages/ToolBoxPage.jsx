@@ -24,7 +24,7 @@ export default function ToolBoxPage() {
           <div className="container">
             <div className="toolbox-grid-wrap">
               <div className="toolbox-intro-box">
-                <h2 className="toolbox-intro-title">Demand Planning:</h2>
+                <h2 className="toolbox-intro-title">Demand Planning</h2>
                 <p className="toolbox-intro-text">
                   Demand planning serves as the decision engine of the supply chain, connecting customer
                   demand, inventory strategy, supplier execution, and financial objectives. High-performing

@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import { toolboxItems } from '../data/toolbox'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function ToolBoxPage() {
-  const [activeItem, setActiveItem] = useState(toolboxItems[0]?.id ?? null)
-  const selected = toolboxItems.find((item) => item.id === activeItem)
+  const slots = Array.from({ length: 4 }, (_, index) => toolboxItems[index] ?? null)
 
   return (
     <>
@@ -24,50 +22,30 @@ export default function ToolBoxPage() {
 
         <section className="section section-alt">
           <div className="container">
-            <div className="project-tabs">
-              {toolboxItems.map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  className={`project-tab ${activeItem === item.id ? 'active' : ''}`}
-                  onClick={() => setActiveItem(item.id)}
-                >
-                  {item.title}
-                </button>
-              ))}
+            <div className="toolbox-grid-wrap">
+              <div className="toolbox-grid">
+                {slots.map((item, index) => (
+                  <article key={item?.id ?? `empty-${index}`} className="toolbox-grid-item">
+                    {item ? (
+                      <>
+                        <a
+                          href={item.image}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="toolbox-grid-link"
+                          aria-label={`Open ${item.title} full size`}
+                        >
+                          <img src={item.image} alt={item.alt} className="toolbox-grid-image" />
+                        </a>
+                        <p className="toolbox-grid-caption">{item.title}</p>
+                      </>
+                    ) : (
+                      <div className="toolbox-grid-empty" aria-hidden="true" />
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
-
-            {selected && (
-              <article className="project-detail toolbox-detail">
-                <div className="project-header">
-                  <div>
-                    <h3>{selected.title}</h3>
-                    <p>{selected.description}</p>
-                    <div className="tags">
-                      {selected.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <a
-                    href={selected.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary btn-sm"
-                  >
-                    Open Full Image
-                  </a>
-                </div>
-
-                <div className="toolbox-image-wrap">
-                  <img
-                    src={selected.image}
-                    alt={selected.alt}
-                    className="toolbox-image"
-                  />
-                </div>
-              </article>
-            )}
           </div>
         </section>
       </main>

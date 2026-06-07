@@ -227,6 +227,17 @@ a:hover {
   justify-content: center;
 }
 
+.hero-profile-photo {
+  width: min(100%, 360px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  transform: perspective(1200px) rotateY(-8deg) rotateX(4deg);
+}
+
 /* Dashboard preview */
 .dashboard-preview {
   width: min(100%, 430px);
@@ -1082,7 +1093,8 @@ a:hover {
     padding-top: 2.5rem;
   }
 
-  .dashboard-preview {
+  .dashboard-preview,
+  .hero-profile-photo {
     transform: none;
   }
 

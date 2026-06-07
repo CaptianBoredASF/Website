@@ -32,7 +32,6 @@ export default function HomePage() {
       <main>
         <section className="hero">
           <div className="container hero-inner">
-            <p className="eyebrow">Resume & Portfolio</p>
             <h1>
               <span className="hero-name">{siteConfig.name}</span>
               <span className="hero-title">{siteConfig.title}</span>

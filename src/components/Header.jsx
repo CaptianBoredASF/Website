@@ -1,7 +1,6 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { siteConfig } from '../data/resume'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-const navItems = [
+export const navItems = [
   { id: 'about', label: 'About', section: 'about' },
   { id: 'experience', label: 'Experience', section: 'experience' },
   { id: 'skills', label: 'Skills', section: 'skills' },
@@ -34,9 +33,6 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link to="/" className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          {siteConfig.name}
-        </Link>
         <nav className="nav">
           {navItems.map((item) => (
             <button

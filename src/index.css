@@ -940,8 +940,6 @@ a:hover {
   max-width: 240px;
   height: auto;
   margin: 0 auto;
-  filter: contrast(1.22) saturate(1.35) brightness(1.04);
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .site-footer {

@@ -274,6 +274,10 @@ a:hover {
   color: var(--text-muted);
 }
 
+.skill-group + .skill-group {
+  margin-top: 2rem;
+}
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;

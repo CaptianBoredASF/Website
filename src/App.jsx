@@ -4,7 +4,7 @@ import {
   about,
   experience,
   education,
-  skills,
+  skillGroups,
   tableauProjects,
 } from './data/resume'
 import TableauEmbed from './components/TableauEmbed'
@@ -77,14 +77,16 @@ export default function App() {
                 <article key={`${job.company}-${job.period}`} className="timeline-item">
                   <div className="timeline-meta">
                     <h3>{job.role}</h3>
-                    <p className="company">{job.company}</p>
+                    <p className="company">{job.company}{job.location ? ` · ${job.location}` : ''}</p>
                     <p className="period">{job.period}</p>
                   </div>
-                  <ul>
-                    {job.highlights.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                  {job.highlights.length > 0 && (
+                    <ul>
+                      {job.highlights.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
               ))}
             </div>
@@ -105,11 +107,16 @@ export default function App() {
         <section id="skills" className="section">
           <div className="container">
             <h2 className="section-title">Skills</h2>
-            <div className="skills-grid">
-              {skills.map((skill) => (
-                <span key={skill} className="skill-pill">{skill}</span>
-              ))}
-            </div>
+            {skillGroups.map((group) => (
+              <div key={group.label} className="skill-group">
+                <h3 className="subsection-title">{group.label}</h3>
+                <div className="skills-grid">
+                  {group.skills.map((skill) => (
+                    <span key={skill} className="skill-pill">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -163,9 +170,12 @@ export default function App() {
         <section id="contact" className="section">
           <div className="container contact-inner">
             <h2 className="section-title">Contact</h2>
-            <p className="section-lead">Open to roles in analytics, BI, and data visualization.</p>
+            <p className="section-lead">Open to program leadership, supply chain, and operations roles.</p>
             <div className="contact-links">
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+              {siteConfig.phone && (
+                <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}>{siteConfig.phone}</a>
+              )}
               {siteConfig.domain && (
                 <a href={siteConfig.domain}>{siteConfig.domain.replace('https://', '')}</a>
               )}

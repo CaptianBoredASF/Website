@@ -923,16 +923,25 @@ a:hover {
 }
 
 .toolbox-image-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
   border-radius: calc(var(--radius) - 4px);
   overflow: hidden;
-  background: #f8fafc;
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
 .toolbox-image {
   display: block;
-  width: 100%;
+  width: 20%;
+  max-width: 240px;
   height: auto;
+  margin: 0 auto;
+  filter: contrast(1.22) saturate(1.35) brightness(1.04);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .site-footer {

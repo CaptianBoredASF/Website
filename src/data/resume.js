@@ -5,7 +5,7 @@ export const siteConfig = {
   domain: 'https://nathanielnelsond.com',
   title: 'Senior Operations and Program Leader',
   tagline:
-    '10+ years driving strategic supply chain and operations initiatives with data analytics, AI tools, and cross-functional leadership.',
+    'Supply Chain Executive with 13+ years of experience leading billion-dollar businesses through transformative planning, inventory, and operational strategies. Proven track record delivering $100M+ in value by optimizing supply chains, scaling S&OP capabilities, improving customer experience, and building high-performing teams across retail, eCommerce, and consumer products.',
   email: 'Nathan.Nelson.D@gmail.com',
   phone: '(314) 566-4757',
   location: 'Fort Lauderdale, FL',

@@ -11,6 +11,8 @@ import { highlights } from '../data/highlights'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import DashboardPreview from '../components/DashboardPreview'
+import CompanyLogo from '../components/CompanyLogo'
+import HighlightText from '../components/HighlightText'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -114,32 +116,49 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="experience" className="section section-alt">
+        <section id="experience" className="section experience-section">
           <div className="container">
-            <h2 className="section-title section-title-center">Experience</h2>
-            <div className="timeline">
+            <h2 className="experience-heading">Experience</h2>
+            <div className="experience-timeline">
               {experience.map((job) => (
-                <article key={`${job.company}-${job.period}`} className="timeline-item">
-                  <div className="timeline-meta">
-                    <h3>{job.role}</h3>
-                    <p className="company">
-                      {job.company}
-                      {job.location ? ` · ${job.location}` : ''}
-                    </p>
-                    <p className="period">{job.period}</p>
+                <article key={`${job.company}-${job.period}`} className="experience-entry">
+                  <div className="experience-marker" aria-hidden="true" />
+                  <div className="experience-card">
+                    <div className="experience-card-left">
+                      <CompanyLogo company={job.company} />
+                      <h3>{job.role}</h3>
+                      <p className="experience-meta">
+                        <span className="experience-company">{job.company}</span>
+                        <span className="experience-divider">|</span>
+                        <span className="experience-period">{job.period}</span>
+                      </p>
+                    </div>
+                    <div className="experience-card-right">
+                      {job.highlights.length > 0 ? (
+                        <>
+                          <p className="experience-summary">
+                            <HighlightText text={job.highlights[0]} />
+                          </p>
+                          {job.highlights.length > 1 && (
+                            <ul className="experience-bullets">
+                              {job.highlights.slice(1).map((item) => (
+                                <li key={item}>
+                                  <HighlightText text={item} />
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </>
+                      ) : (
+                        <p className="experience-summary muted">Role details available upon request.</p>
+                      )}
+                    </div>
                   </div>
-                  {job.highlights.length > 0 && (
-                    <ul>
-                      {job.highlights.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
                 </article>
               ))}
             </div>
 
-            <h3 className="subsection-title">Education</h3>
+            <h3 className="education-heading">Education</h3>
             <div className="education-grid">
               {education.map((item) => (
                 <div key={item.school} className="education-card">

@@ -31,15 +31,14 @@ export const experience = [
     ],
   },
   {
-    role: 'Senior Program Manager',
+    role: 'Senior Program Manager, CPFR & Supply Planning',
     company: 'Chewy',
-    location: 'Seattle, WA',
     period: 'Mar 2022 — Aug 2024',
     highlights: [
-      'Scoped and launched Chewy’s CPFR program as a net-new enterprise operating model across 2,000+ vendors.',
-      'Delivered 5%+ OOS reduction, 4% location-level OOS reduction, and $10M+ in optimized savings.',
-      'Built and deployed 10+ Tableau dashboards with SOPs and operating playbooks adopted across planning teams.',
-      'Built API-driven data sharing and automated reporting pipelines (8+ reports), driving 40%+ efficiency gains.',
+      'Designed and scaled Chewy\'s enterprise CPFR operating model, establishing strategic planning governance across 2,000+ supplier relationships and aligning demand, supply, merchandising, and operations teams around a unified planning process.',
+      'Led cross-functional S&OP and supply-demand reconciliation initiatives, delivering 5%+ reduction in out-of-stock rates, 4% improvement in location-level availability, and $10M+ in inventory and operational savings.',
+      'Partnered with executive leadership and strategic suppliers to improve forecast accuracy, inventory positioning, and production planning, driving a 1.5% improvement in WAPE and reducing excess inventory by $3M+.',
+      'Built scalable data and decision-support capabilities including automated reporting, API-driven supplier integrations, and executive dashboards that increased planning productivity by 40%+ and enabled data-driven decisions across the enterprise.',
     ],
   },
   {

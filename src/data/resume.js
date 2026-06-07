@@ -132,6 +132,63 @@ export const skillGroups = [
   },
 ]
 
+// Replace with your real case studies.
+export const caseStudies = [
+  {
+    id: 'vendor-compliance',
+    title: 'Vendor Compliance Transformation',
+    company: 'Chewy',
+    description:
+      'Transformed vendor compliance into a strategic business function supporting a multi-billion-dollar supply chain network.',
+    challenge:
+      'Legacy compliance processes lacked scalability, data visibility, and executive alignment across a growing supplier base.',
+    approach:
+      'Built a cross-functional team spanning program management, business engineering, and analytics; redesigned governance, chargeback logic, and supplier performance reporting.',
+    results: [
+      '$20M in annual value through improved compliance and labor efficiency',
+      '$12M in annual revenue from a new enterprise chargeback platform',
+      '30%+ reduction in vendor defect rates',
+      '$30M+ in executive-approved automation and quality investments',
+    ],
+    tags: ['Supply Chain', 'Vendor Management', 'Automation'],
+  },
+  {
+    id: 'cpfr-planning',
+    title: 'Enterprise CPFR & Supply Planning',
+    company: 'Chewy',
+    description:
+      'Designed and scaled Chewy\'s CPFR operating model across 2,000+ supplier relationships.',
+    challenge:
+      'Planning teams needed a unified process to align demand, supply, merchandising, and operations at enterprise scale.',
+    approach:
+      'Launched CPFR governance, S&OP reconciliation workflows, supplier integrations, and executive decision-support dashboards.',
+    results: [
+      '5%+ reduction in out-of-stock rates',
+      '4% improvement in location-level availability',
+      '$10M+ in inventory and operational savings',
+      '40%+ increase in planning productivity',
+    ],
+    tags: ['S&OP', 'CPFR', 'Forecasting'],
+  },
+  {
+    id: 'apple-portfolio',
+    title: 'Apple Portfolio & NPI Launch',
+    company: 'T-Mobile',
+    description:
+      'Led the $1.5B Apple US retail portfolio across 7,000+ stores and 1,000+ SKUs.',
+    challenge:
+      'Manage complex NPI launches, merger integration, and inventory performance across a national retail network.',
+    approach:
+      'Aligned planning systems, stakeholder processes, and launch execution across retail, procurement, and IT teams.',
+    results: [
+      'Year-end retail stock-out of 2% vs. 3% target, saving $80M in inventory',
+      'Launched $1B+ Apple NPI program across three major product releases',
+      'Led Sprint merger store transitions across 3,000+ locations',
+    ],
+    tags: ['Retail', 'NPI', 'Inventory'],
+  },
+]
+
 // Replace sample URLs with your Tableau Public dashboard embed links.
 export const tableauProjects = [
   {

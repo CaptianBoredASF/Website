@@ -38,12 +38,15 @@ export default function HomePage() {
             </h1>
             <p className="hero-tagline">{siteConfig.tagline}</p>
             <div className="hero-actions">
-              <Link to="/dashboards" className="btn btn-primary">
-                View Dashboards
-              </Link>
-              <a className="btn btn-secondary" href={siteConfig.resumePdf} download>
+              <a className="btn btn-primary" href={siteConfig.resumePdf} download>
                 Download Resume
               </a>
+              <Link to="/dashboards" className="btn btn-secondary">
+                View Dashboards
+              </Link>
+              <Link to="/case-studies" className="btn btn-secondary">
+                Case Studies
+              </Link>
             </div>
           </div>
         </section>

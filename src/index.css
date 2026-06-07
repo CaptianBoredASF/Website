@@ -94,6 +94,14 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
+.page-hero-inner {
+  text-align: center;
+}
+
+.page-hero-inner .section-lead {
+  margin-inline: auto;
+}
+
 .hero {
   padding: 5rem 0 4rem;
   background:
@@ -386,6 +394,41 @@ a:hover {
   justify-content: center;
   gap: 1rem 1.5rem;
   font-size: 1.05rem;
+}
+
+.case-study-detail {
+  text-align: left;
+}
+
+.case-study-company {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.case-study-sections {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.case-study-block h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.case-study-block p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.case-study-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.case-study-block li + li {
+  margin-top: 0.35rem;
 }
 
 .site-footer {

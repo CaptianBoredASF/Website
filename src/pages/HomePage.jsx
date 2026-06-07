@@ -7,11 +7,43 @@ import {
   education,
   skillGroups,
 } from '../data/resume'
+import { highlights } from '../data/highlights'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import DashboardPreview from '../components/DashboardPreview'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
+function HighlightIcon({ type }) {
+  if (type === 'chart') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 19V5M10 19V9M16 19V12M22 19V7" />
+      </svg>
+    )
+  }
+  if (type === 'shield') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 3l8 4v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z" />
+      </svg>
+    )
+  }
+  if (type === 'people') {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M16 19v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 19v-1a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="4" />
+    </svg>
+  )
 }
 
 export default function HomePage() {
@@ -31,36 +63,60 @@ export default function HomePage() {
 
       <main>
         <section className="hero">
-          <div className="container hero-inner">
-            <h1>
-              <span className="hero-name">{siteConfig.name}</span>
-              <span className="hero-title">{siteConfig.title}</span>
-            </h1>
-            <p className="hero-tagline">{siteConfig.tagline}</p>
-            <div className="hero-actions">
-              <a className="btn btn-primary" href={siteConfig.resumePdf} download>
-                Download Resume
-              </a>
-              <Link to="/dashboards" className="btn btn-secondary">
-                View Dashboards
-              </Link>
-              <Link to="/case-studies" className="btn btn-secondary">
-                Case Studies
-              </Link>
+          <div className="container hero-grid">
+            <div className="hero-content">
+              <p className="hero-badge">
+                <span className="hero-badge-dot" />
+                {siteConfig.heroBadge}
+              </p>
+              <h1>
+                <span className="hero-name">{siteConfig.name}</span>
+                <span className="hero-title">{siteConfig.title}</span>
+              </h1>
+              <p className="hero-tagline">{siteConfig.tagline}</p>
+              <div className="hero-actions">
+                <a className="btn btn-primary" href={siteConfig.resumePdf} download>
+                  <span aria-hidden="true">↓</span> Download Resume
+                </a>
+                <Link to="/dashboards" className="btn btn-outline-light">
+                  <span aria-hidden="true">▦</span> View Dashboards
+                </Link>
+                <Link to="/case-studies" className="btn btn-outline-light">
+                  <span aria-hidden="true">☰</span> Case Studies
+                </Link>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              <DashboardPreview />
             </div>
           </div>
         </section>
 
-        <section id="about" className="section">
-          <div className="container">
-            <h2 className="section-title">About</h2>
-            <p className="about-text">{about.summary}</p>
+        <section id="about" className="section about-section">
+          <div className="container about-grid">
+            <div className="highlights-grid">
+              {highlights.map((item) => (
+                <article key={item.id} className={`highlight-card highlight-${item.id}`}>
+                  <div className="highlight-icon">
+                    <HighlightIcon type={item.icon} />
+                  </div>
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </article>
+              ))}
+            </div>
+
+            <div className="about-content">
+              <h2 className="section-title">About</h2>
+              <p className="about-text">{about.summary}</p>
+            </div>
           </div>
         </section>
 
         <section id="experience" className="section section-alt">
           <div className="container">
-            <h2 className="section-title">Experience</h2>
+            <h2 className="section-title section-title-center">Experience</h2>
             <div className="timeline">
               {experience.map((job) => (
                 <article key={`${job.company}-${job.period}`} className="timeline-item">
@@ -98,7 +154,7 @@ export default function HomePage() {
 
         <section id="skills" className="section">
           <div className="container">
-            <h2 className="section-title">Skills</h2>
+            <h2 className="section-title section-title-center">Skills</h2>
             {skillGroups.map((group) => (
               <div key={group.label} className="skill-group">
                 <h3 className="subsection-title">{group.label}</h3>
@@ -114,7 +170,7 @@ export default function HomePage() {
 
         <section id="contact" className="section section-alt">
           <div className="container contact-inner">
-            <h2 className="section-title">Contact</h2>
+            <h2 className="section-title section-title-center">Contact</h2>
             <p className="section-lead">Open to program leadership, supply chain, and operations roles.</p>
             <div className="contact-links">
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>

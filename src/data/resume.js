@@ -4,6 +4,7 @@ export const siteConfig = {
   name: 'Nathaniel Nelson',
   domain: 'https://nathanielnelsond.com',
   title: 'Senior Operations and Program Leader',
+  heroBadge: 'Supply Chain Executive',
   tagline:
     'Supply Chain Executive with 13+ years of experience leading billion-dollar businesses through transformative planning, inventory, and operational strategies. Proven track record delivering $100M+ in value by optimizing supply chains, scaling S&OP capabilities, improving customer experience, and building high-performing teams across retail, eCommerce, and consumer products.',
   email: 'Nathan.Nelson.D@gmail.com',

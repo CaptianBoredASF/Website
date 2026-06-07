@@ -14,7 +14,7 @@ export default function DashboardsPage() {
 
       <main>
         <section className="section page-hero">
-          <div className="container">
+          <div className="container page-hero-inner">
             <p className="eyebrow">Portfolio</p>
             <h1 className="section-title">Tableau Dashboards</h1>
             <p className="section-lead">

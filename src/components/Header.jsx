@@ -1,10 +1,12 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { siteConfig } from '../data/resume'
 
 export const navItems = [
   { id: 'about', label: 'About', section: 'about' },
   { id: 'experience', label: 'Experience', section: 'experience' },
   { id: 'skills', label: 'Skills', section: 'skills' },
   { id: 'dashboards', label: 'Dashboards', path: '/dashboards' },
+  { id: 'case-studies', label: 'Case Studies', path: '/case-studies' },
   { id: 'contact', label: 'Contact', section: 'contact' },
 ]
 
@@ -30,26 +32,36 @@ export default function Header() {
     navigate(`/#${item.section}`)
   }
 
+  function isActive(item) {
+    if (item.path) return location.pathname === item.path
+    if (location.pathname !== '/') return false
+    if (item.section === 'about' && !location.hash) return true
+    return location.hash === `#${item.section}`
+  }
+
   return (
     <header className="site-header">
       <div className="container header-inner">
+        <Link to="/" className="logo-mark" aria-label="Home">
+          NN
+        </Link>
+
         <nav className="nav">
           {navItems.map((item) => (
             <button
               key={item.id}
               type="button"
-              className={
-                (item.path && location.pathname === item.path) ||
-                (!item.path && location.pathname === '/' && location.hash === `#${item.section}`)
-                  ? 'active'
-                  : ''
-              }
+              className={isActive(item) ? 'active' : ''}
               onClick={() => handleNav(item)}
             >
               {item.label}
             </button>
           ))}
         </nav>
+
+        <a className="btn btn-header-resume" href={siteConfig.resumePdf} download>
+          <span aria-hidden="true">↓</span> Resume
+        </a>
       </div>
     </header>
   )

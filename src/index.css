@@ -86,9 +86,18 @@ a:hover {
   transition: background 0.2s, color 0.2s;
 }
 
-.nav button:hover {
+.nav button:hover,
+.nav button.active {
   background: var(--bg-alt);
   color: var(--text);
+}
+
+.page-hero {
+  padding-top: 3rem;
+}
+
+.page-hero .section-title {
+  margin-bottom: 0.75rem;
 }
 
 .hero {

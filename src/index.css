@@ -204,10 +204,14 @@ a:hover {
   max-width: 60ch;
 }
 
+#about .container {
+  text-align: center;
+}
+
 .about-text {
   font-size: 1.1rem;
   max-width: 68ch;
-  margin: 0;
+  margin: 0 auto;
   white-space: pre-line;
 }
 

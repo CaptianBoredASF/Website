@@ -3,7 +3,7 @@
 export const siteConfig = {
   name: 'Nathaniel Nelson',
   domain: 'https://nathanielnelsond.com',
-  title: 'Program & Operations Leader',
+  title: 'Senior Operations and Program Leader',
   tagline:
     '10+ years driving strategic supply chain and operations initiatives with data analytics, AI tools, and cross-functional leadership.',
   email: 'Nathan.Nelson.D@gmail.com',

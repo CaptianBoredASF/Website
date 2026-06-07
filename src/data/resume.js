@@ -22,7 +22,7 @@ export const experience = [
   {
     role: 'Senior Program Manager, Vendor Compliance',
     company: 'Chewy',
-    period: 'Aug 2024 — Present',
+    period: 'Aug 2024 — Jun 2026',
     highlights: [
       'Lead Chewy\'s enterprise Vendor Compliance organization, managing a team of 6 across Program Management, Business Engineering, and Analytics while defining strategy, governance, and multi-year transformation initiatives supporting a multi-billion-dollar supply chain network.',
       'Transformed vendor compliance into a strategic business function, delivering $20M in annual value, improving labor efficiency by 15%, and reducing vendor defects by 30%+ through data-driven process redesign and performance management.',

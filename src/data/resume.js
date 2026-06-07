@@ -197,7 +197,7 @@ export const tableauProjects = [
     title: 'First Project',
     description:
       'Revenue and inventory analysis by product category with KPIs for revenue, units sold, average price, and stock levels.',
-    url: 'https://public.tableau.com/views/FirstProject_17108428028600/Dashboard1',
+    url: 'https://public.tableau.com/views/FirstProject_17808428028600/Dashboard1',
     tags: ['Revenue', 'Inventory', 'Tableau'],
   },
 ]

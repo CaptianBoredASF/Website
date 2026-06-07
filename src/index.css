@@ -918,6 +918,23 @@ a:hover {
   margin-top: 0.35rem;
 }
 
+.toolbox-detail {
+  text-align: left;
+}
+
+.toolbox-image-wrap {
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+}
+
+.toolbox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .site-footer {
   padding: 2rem 0;
   border-top: 1px solid var(--border);

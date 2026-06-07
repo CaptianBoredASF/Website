@@ -8,6 +8,7 @@ export const navItems = [
   { id: 'skills', label: 'Skills', section: 'skills' },
   { id: 'dashboards', label: 'Dashboards', path: '/dashboards' },
   { id: 'case-studies', label: 'Case Studies', path: '/case-studies' },
+  { id: 'toolbox', label: 'Tool Box', path: '/toolbox' },
   { id: 'contact', label: 'Contact', section: 'contact' },
 ]
 

@@ -86,6 +86,9 @@ export default function HomePage() {
                 <Link to="/case-studies" className="btn btn-outline-light">
                   <span aria-hidden="true">☰</span> Case Studies
                 </Link>
+                <Link to="/toolbox" className="btn btn-outline-light">
+                  <span aria-hidden="true">🛠</span> Tool Box
+                </Link>
               </div>
             </div>
 

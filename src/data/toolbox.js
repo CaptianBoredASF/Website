@@ -11,4 +11,10 @@ export const toolboxItems = [
     image: '/toolbox-mastering-demand-planning.png',
     alt: 'Mastering Demand Planning from average to exceptional infographic.',
   },
+  {
+    id: 'demand-forecasting-vs-planning',
+    title: 'Demand Forecasting vs Demand Planning',
+    image: '/toolbox-demand-forecasting-vs-planning.png',
+    alt: 'Demand Forecasting vs Demand Planning infographic comparing the two functions.',
+  },
 ]

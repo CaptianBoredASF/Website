@@ -559,6 +559,31 @@ a:hover {
   margin-inline: auto;
 }
 
+.dashboards-data-note {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 4px);
+  box-shadow: var(--shadow);
+}
+
+.dashboards-data-note-title {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.dashboards-data-note-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
 .timeline {
   display: grid;
   gap: 1.5rem;

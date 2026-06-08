@@ -20,6 +20,15 @@ export default function DashboardsPage() {
             <p className="section-lead">
               Interactive workbooks published on Tableau Public. Click a project to explore.
             </p>
+            <div className="dashboards-data-note">
+              <h2 className="dashboards-data-note-title">About the Data</h2>
+              <p className="dashboards-data-note-text">
+                All dashboards on this site utilize AI-generated sample data created through custom
+                ChatGPT and Claude prompts. The datasets, SQL models, LLM, and business scenarios are
+                designed to demonstrate analytics, reporting, and supply chain decision-making
+                capabilities. No company, customer, or proprietary business data is included.
+              </p>
+            </div>
           </div>
         </section>
 

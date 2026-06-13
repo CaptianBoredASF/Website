@@ -3,10 +3,10 @@
 export const siteConfig = {
   name: 'Nathaniel Nelson',
   domain: 'https://nathanielnelsond.com',
-  title: 'Senior Operations and Program Leader',
-  heroBadge: 'Supply Chain Executive',
+  title: 'Program and Operations Leader',
+  heroBadge: 'Operations & Program Leadership',
   tagline:
-    'Supply Chain Executive with 13+ years of experience leading billion-dollar businesses through transformative planning, inventory, and operational strategies. Proven track record delivering $100M+ in value by optimizing supply chains, scaling S&OP capabilities, improving customer experience, and building high-performing teams across retail, eCommerce, and consumer products.',
+    'Program and Operations Leader with 10+ years of experience driving strategic, cross-functional supply chain and operations initiatives within fast-paced fulfillment environments, with deep expertise in end-to-end process ownership, inventory flow optimization, and capacity-constrained operations. Proven ability to lead diverse, cross-functional teams across multiple concurrent projects, leverage AI-driven tools and data analytics to build and scale solutions, and influence senior leadership to deliver sustainable improvements in speed, quality, and operational efficiency.',
   email: 'Nathan.Nelson.D@gmail.com',
   phone: '(314) 566-4757',
   location: 'Fort Lauderdale, FL',
@@ -88,7 +88,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Senior Supply Chain Associate',
+    role: 'Supply Chain Analyst',
     company: 'PepsiCo',
     location: 'Denver, CO',
     period: '2015 — 2018',

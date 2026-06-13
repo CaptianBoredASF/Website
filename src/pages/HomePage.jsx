@@ -193,7 +193,6 @@ export default function HomePage() {
         <section id="contact" className="section section-alt">
           <div className="container contact-inner">
             <h2 className="section-title section-title-center">Contact</h2>
-            <p className="section-lead">Open to program leadership, supply chain, and operations roles.</p>
             <div className="contact-links">
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
               {siteConfig.phone && (

@@ -1,13 +1,9 @@
-import { useState } from 'react'
 import { tableauProjects } from '../data/resume'
 import TableauEmbed from '../components/TableauEmbed'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function DashboardsPage() {
-  const [activeProject, setActiveProject] = useState(tableauProjects[0]?.id ?? null)
-  const selected = tableauProjects.find((p) => p.id === activeProject)
-
   return (
     <>
       <Header />
@@ -18,7 +14,7 @@ export default function DashboardsPage() {
             <p className="eyebrow">Portfolio</p>
             <h1 className="section-title">Tableau Dashboards</h1>
             <p className="section-lead">
-              Interactive workbooks published on Tableau Public. Click a project to explore.
+              Interactive workbooks published on Tableau Public. Each dashboard is shown in its own section below.
             </p>
             <div className="dashboards-data-note">
               <h2 className="dashboards-data-note-title">About the Data</h2>
@@ -34,43 +30,45 @@ export default function DashboardsPage() {
 
         <section className="section section-alt">
           <div className="container">
-            <div className="project-tabs">
+            <nav className="dashboards-jump-nav" aria-label="Dashboard sections">
               {tableauProjects.map((project) => (
-                <button
-                  key={project.id}
-                  type="button"
-                  className={`project-tab ${activeProject === project.id ? 'active' : ''}`}
-                  onClick={() => setActiveProject(project.id)}
-                >
+                <a key={project.id} href={`#${project.id}`} className="dashboards-jump-link">
                   {project.title}
-                </button>
+                </a>
+              ))}
+            </nav>
+
+            <div className="dashboards-list">
+              {tableauProjects.map((project) => (
+                <article key={project.id} id={project.id} className="project-detail">
+                  <div className="project-header">
+                    <div>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <div className="tags">
+                        {project.tags.map((tag) => (
+                          <span key={tag} className="tag">{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <a
+                      href={project.url.split('?:')[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-sm"
+                    >
+                      Open on Tableau Public
+                    </a>
+                  </div>
+                  <TableauEmbed
+                    url={project.url}
+                    title={project.title}
+                    embedWidth={project.embedWidth}
+                    embedHeight={project.embedHeight}
+                  />
+                </article>
               ))}
             </div>
-
-            {selected && (
-              <article className="project-detail">
-                <div className="project-header">
-                  <div>
-                    <h3>{selected.title}</h3>
-                    <p>{selected.description}</p>
-                    <div className="tags">
-                      {selected.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <a
-                    href={selected.url.split('?:')[0]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary btn-sm"
-                  >
-                    Open on Tableau Public
-                  </a>
-                </div>
-                <TableauEmbed url={selected.url} title={selected.title} />
-              </article>
-            )}
           </div>
         </section>
       </main>

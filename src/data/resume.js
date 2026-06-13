@@ -199,6 +199,8 @@ export const tableauProjects = [
       'Revenue and inventory analysis by product category with KPIs for revenue, units sold, average price, and stock levels.',
     url: 'https://public.tableau.com/views/FirstProject_17808428028600/Dashboard1',
     tags: ['Revenue', 'Inventory', 'Tableau'],
+    embedWidth: 1200,
+    embedHeight: 900,
   },
   {
     id: 'supply-chain-executive-dashboard',
@@ -207,5 +209,7 @@ export const tableauProjects = [
       'Executive supply chain performance view with KPIs, demand vs forecast trends, and category-level insights for operational decision-making.',
     url: 'https://public.tableau.com/views/SupplyChainExecutiveDashboard_17813684481110/Dashboard1',
     tags: ['Supply Chain', 'Forecasting', 'Tableau'],
+    embedWidth: 1600,
+    embedHeight: 927,
   },
 ]

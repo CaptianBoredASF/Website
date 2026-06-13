@@ -821,6 +821,35 @@ a:hover {
   font-weight: 500;
 }
 
+.dashboards-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboards-jump-link {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dashboards-jump-link:hover {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+  text-decoration: none;
+}
+
+.dashboards-list {
+  display: grid;
+  gap: 2rem;
+}
+
 .project-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -885,19 +914,27 @@ a:hover {
   border-radius: 999px;
 }
 
-.tableau-embed {
+.tableau-embed-wrap {
   width: 100%;
-  min-height: 650px;
+}
+
+.tableau-embed {
+  position: relative;
+  width: 100%;
   border-radius: calc(var(--radius) - 4px);
   overflow: hidden;
   background: #f8fafc;
 }
 
 .tableau-iframe {
-  width: 100%;
-  height: 650px;
-  border: 0;
   display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-detail[id] {
+  scroll-margin-top: 5rem;
 }
 
 .tableau-fallback {
@@ -1156,9 +1193,5 @@ a:hover {
 
   .highlights-grid {
     grid-template-columns: 1fr;
-  }
-
-  .tableau-embed {
-    min-height: 420px;
   }
 }

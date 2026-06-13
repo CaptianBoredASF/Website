@@ -177,9 +177,9 @@ export default function HomePage() {
         <section id="skills" className="section">
           <div className="container">
             <h2 className="section-title section-title-center">Skills</h2>
-            {skillGroups.map((group) => (
-              <div key={group.label} className="skill-group">
-                <h3 className="subsection-title">{group.label}</h3>
+            {skillGroups.map((group, index) => (
+              <div key={group.label ?? `skills-${index}`} className="skill-group">
+                {group.label && <h3 className="subsection-title">{group.label}</h3>}
                 <div className="skills-grid">
                   {group.skills.map((skill) => (
                     <span key={skill} className="skill-pill">{skill}</span>

@@ -14,7 +14,7 @@ export default function DashboardsPage() {
             <p className="eyebrow">Portfolio</p>
             <h1 className="section-title">Tableau Dashboards</h1>
             <p className="section-lead">
-              Interactive workbooks published on Tableau Public. Each dashboard is shown in its own section below.
+              Interactive workbooks published on Tableau Public.
             </p>
             <div className="dashboards-data-note">
               <h2 className="dashboards-data-note-title">About the Data</h2>
@@ -29,15 +29,7 @@ export default function DashboardsPage() {
         </section>
 
         <section className="section section-alt">
-          <div className="container">
-            <nav className="dashboards-jump-nav" aria-label="Dashboard sections">
-              {tableauProjects.map((project) => (
-                <a key={project.id} href={`#${project.id}`} className="dashboards-jump-link">
-                  {project.title}
-                </a>
-              ))}
-            </nav>
-
+          <div className="dashboards-wide-wrap">
             <div className="dashboards-list">
               {tableauProjects.map((project) => (
                 <article key={project.id} id={project.id} className="project-detail">

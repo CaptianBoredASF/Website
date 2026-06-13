@@ -9,27 +9,27 @@ function toPublicUrl(url) {
   return url.split('?:')[0].split('?')[0]
 }
 
-export default function TableauEmbed({ url, title, embedWidth = 1200, embedHeight = 900 }) {
+export default function TableauEmbed({ url, title, embedWidth = 1600, embedHeight = 927 }) {
   const wrapRef = useRef(null)
-  const [size, setSize] = useState({ width: embedWidth, height: embedHeight })
+  const [scale, setScale] = useState(1)
 
   useEffect(() => {
     const element = wrapRef.current
     if (!element) return undefined
 
-    const updateSize = () => {
-      const width = Math.max(Math.round(element.clientWidth), 320)
-      const height = Math.round(width * (embedHeight / embedWidth))
-      setSize({ width, height })
+    const updateScale = () => {
+      const width = element.clientWidth
+      setScale(width / embedWidth)
     }
 
-    updateSize()
-    const observer = new ResizeObserver(updateSize)
+    updateScale()
+    const observer = new ResizeObserver(updateScale)
     observer.observe(element)
     return () => observer.disconnect()
-  }, [embedWidth, embedHeight])
+  }, [embedWidth])
 
-  const embedUrl = toEmbedUrl(url, size.width, size.height)
+  const embedUrl = toEmbedUrl(url, embedWidth, embedHeight)
+  const scaledHeight = Math.round(embedHeight * scale)
 
   return (
     <div className="tableau-embed-wrap">
@@ -38,7 +38,7 @@ export default function TableauEmbed({ url, title, embedWidth = 1200, embedHeigh
         className="tableau-embed"
         role="region"
         aria-label={title}
-        style={{ height: `${size.height}px` }}
+        style={{ height: `${scaledHeight}px` }}
       >
         <iframe
           src={embedUrl}
@@ -47,8 +47,12 @@ export default function TableauEmbed({ url, title, embedWidth = 1200, embedHeigh
           scrolling="no"
           allowFullScreen
           className="tableau-iframe"
-          width={size.width}
-          height={size.height}
+          width={embedWidth}
+          height={embedHeight}
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: 'top left',
+          }}
         />
       </div>
       <p className="tableau-fallback">

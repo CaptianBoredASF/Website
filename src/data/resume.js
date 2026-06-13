@@ -193,16 +193,6 @@ export const caseStudies = [
 // Tableau embed URL: Tableau Public → Share → Copy embed code → use the url value.
 export const tableauProjects = [
   {
-    id: 'first-project',
-    title: 'First Project',
-    description:
-      'Revenue and inventory analysis by product category with KPIs for revenue, units sold, average price, and stock levels.',
-    url: 'https://public.tableau.com/views/FirstProject_17808428028600/Dashboard1',
-    tags: ['Revenue', 'Inventory', 'Tableau'],
-    embedWidth: 1200,
-    embedHeight: 900,
-  },
-  {
     id: 'supply-chain-executive-dashboard',
     title: 'Supply Chain Executive Dashboard',
     description:

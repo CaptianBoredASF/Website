@@ -13,6 +13,7 @@ import Footer from '../components/Footer'
 import DashboardPreview from '../components/DashboardPreview'
 import CompanyLogo from '../components/CompanyLogo'
 import HighlightText from '../components/HighlightText'
+import EducationCard from '../components/EducationCard'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -164,11 +165,7 @@ export default function HomePage() {
             <h3 className="education-heading">Education</h3>
             <div className="education-grid">
               {education.map((item) => (
-                <div key={item.school} className="education-card">
-                  <strong>{item.degree}</strong>
-                  <span>{item.school}</span>
-                  <span className="muted">{item.year}</span>
-                </div>
+                <EducationCard key={item.school} {...item} />
               ))}
             </div>
           </div>

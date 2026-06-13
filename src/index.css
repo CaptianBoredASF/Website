@@ -787,6 +787,7 @@ a:hover {
 .education-grid {
   display: grid;
   gap: 1rem;
+  max-width: 42rem;
 }
 
 .education-card {
@@ -797,6 +798,74 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
+}
+
+.education-card-branded {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 42%),
+    linear-gradient(135deg, var(--education-brand, #e5182d) 0%, #b81224 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(229, 24, 45, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.education-card-branded:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(229, 24, 45, 0.3);
+}
+
+.education-card-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.education-card-wordmark {
+  width: min(150px, 100%);
+  height: auto;
+  opacity: 0.95;
+}
+
+.education-card-logo {
+  width: 88px;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+}
+
+.education-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.education-card-degree {
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+.education-card-school {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.96;
+}
+
+.education-card-year {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 .muted {
@@ -1146,6 +1215,15 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .education-card-branded {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .education-card-brand {
+    order: -1;
+  }
+
   .toolbox-intro-box {
     padding: 1rem;
   }

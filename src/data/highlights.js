@@ -7,7 +7,7 @@ export const highlights = [
   },
   {
     id: 'experience',
-    value: '10+',
+    value: '13+',
     label: 'Years Experience',
     icon: 'shield',
   },

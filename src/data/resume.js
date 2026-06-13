@@ -115,12 +115,6 @@ export const education = [
     degree: 'B.S. in Business Administration and Economics',
     school: 'Southern Illinois University Edwardsville',
     year: '2013',
-    brand: {
-      color: '#e5182d',
-      logo: '/siue-cougar-white.png',
-      wordmark: '/siue-wordmark-white.png',
-      url: 'https://www.siue.edu/',
-    },
   },
 ]
 

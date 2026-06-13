@@ -95,7 +95,7 @@ export const experience = [
     highlights: [],
   },
   {
-    role: 'Field/Warehouse Inventory Analyst',
+    role: 'Warehouse Inventory Analyst',
     company: 'Kasco',
     location: 'St. Louis, MO',
     period: '2014 — 2015',

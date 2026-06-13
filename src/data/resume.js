@@ -200,4 +200,12 @@ export const tableauProjects = [
     url: 'https://public.tableau.com/views/FirstProject_17808428028600/Dashboard1',
     tags: ['Revenue', 'Inventory', 'Tableau'],
   },
+  {
+    id: 'supply-chain-executive-dashboard',
+    title: 'Supply Chain Executive Dashboard',
+    description:
+      'Executive supply chain performance view with KPIs, demand vs forecast trends, and category-level insights for operational decision-making.',
+    url: 'https://public.tableau.com/views/SupplyChainExecutiveDashboard_17813684481110/Dashboard1',
+    tags: ['Supply Chain', 'Forecasting', 'Tableau'],
+  },
 ]

@@ -205,11 +205,11 @@ export const caseStudies = [
 // Tableau embed URL: Tableau Public → Share → Copy embed code → use the url value.
 export const tableauProjects = [
   {
-    id: 'supply-chain-executive-dashboard',
-    title: 'Supply Chain Executive Dashboard',
+    id: 'supply-chain-dashboard',
+    title: 'Supply Chain Dashboard',
     description:
       'Executive supply chain performance view with KPIs, demand vs forecast trends, and category-level insights for operational decision-making.',
-    url: 'https://public.tableau.com/views/SupplyChainExecutiveDashboard_17813684481110/Dashboard1',
+    url: 'https://public.tableau.com/views/SupplyChainDashboard_17813813310900/Dashboard1',
     tags: ['Supply Chain', 'Forecasting', 'Tableau'],
     embedWidth: 1600,
     embedHeight: 927,

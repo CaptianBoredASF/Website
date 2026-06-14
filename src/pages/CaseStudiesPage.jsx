@@ -50,16 +50,26 @@ export default function CaseStudiesPage() {
                       ))}
                     </div>
                   </div>
+                  {selected.pdf && (
+                    <a
+                      href={selected.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-sm"
+                    >
+                      View Full Case Study
+                    </a>
+                  )}
                 </div>
 
                 <div className="case-study-sections">
                   <div className="case-study-block">
                     <h4>Challenge</h4>
-                    <p>{selected.challenge}</p>
+                    <p className="case-study-text">{selected.challenge}</p>
                   </div>
                   <div className="case-study-block">
                     <h4>Approach</h4>
-                    <p>{selected.approach}</p>
+                    <p className="case-study-text">{selected.approach}</p>
                   </div>
                   <div className="case-study-block">
                     <h4>Results</h4>
@@ -69,6 +79,12 @@ export default function CaseStudiesPage() {
                       ))}
                     </ul>
                   </div>
+                  {selected.impact && (
+                    <div className="case-study-block">
+                      <h4>Impact</h4>
+                      <p className="case-study-text">{selected.impact}</p>
+                    </div>
+                  )}
                 </div>
               </article>
             )}

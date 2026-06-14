@@ -957,9 +957,15 @@ a:hover {
   color: var(--accent);
 }
 
-.case-study-block p {
+.case-study-block p,
+.case-study-text {
   margin: 0;
   color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.case-study-text {
+  white-space: pre-line;
 }
 
 .case-study-block ul {

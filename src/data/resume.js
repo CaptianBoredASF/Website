@@ -167,20 +167,26 @@ export const caseStudies = [
   },
   {
     id: 'cpfr-planning',
-    title: 'Enterprise CPFR & Supply Planning',
+    title: 'Enterprise CPFR Program',
     company: 'Chewy',
     description:
-      'Designed and scaled Chewy\'s CPFR operating model across 2,000+ supplier relationships.',
+      'Designed and launched Chewy\'s Collaborative Planning, Forecasting & Replenishment (CPFR) program in response to COVID-era supply chain volatility, scaling from pilot to 2,000+ supplier relationships.',
     challenge:
-      'Planning teams needed a unified process to align demand, supply, merchandising, and operations at enterprise scale.',
+      'In 2022, I was hired to design and launch Chewy\'s CPFR program in response to unprecedented volatility created by COVID-era supply chain disruptions. While isolated supplier partnerships had demonstrated success through limited data sharing and forecasting collaboration, there was no standardized process, operating model, governance structure, or technology framework capable of scaling these efforts across the enterprise.\n\nThe program supported five business verticals, more than 20,000 SKUs, and over 3,000 supplier relationships. Suppliers were navigating production constraints, transportation delays, labor shortages, and rapidly shifting consumer demand patterns. Forecast alignment varied considerably by category, while stakeholders lacked visibility into the root causes of service failures, inventory risk, and supplier performance issues.\n\nExecutive leadership needed a more proactive approach to managing inventory investments and product availability. Existing planning processes relied heavily on reactive communication and disconnected reporting, making it difficult to identify risks early enough to prevent customer impact or make informed supply chain decisions.',
     approach:
-      'Launched CPFR governance, S&OP reconciliation workflows, supplier integrations, and executive decision-support dashboards.',
+      'I designed and launched Chewy\'s CPFR program by creating the operating model, governance structure, reporting framework, and supplier engagement strategy required to scale collaborative planning across the enterprise. Beginning with a pilot group of strategic suppliers, I established standardized processes for sharing forecasts, inventory positions, service-level metrics, and supply risks while partnering with Merchandising, Demand Planning, Replenishment, and Supplier Management teams to align internal and external stakeholders around common objectives, metrics, and planning processes.\n\nTo support scalability, I developed a tiered supplier engagement model that segmented vendors based on business impact, operational complexity, and planning maturity. Tier 1 suppliers participated in Weekly Business Reviews (WBRs), Monthly Forecast Reconciliation meetings, Quarterly Business Reviews (QBRs), Joint Business Planning sessions, and structured exception management processes, while lower-tier suppliers were managed through standardized reporting and targeted performance reviews.\n\nI developed reporting and analytics that enabled leadership teams to identify root causes behind forecast misses, service disruptions, inventory imbalances, and supplier performance issues. The platform provided visibility into forecast accuracy, fill rates, in-stock performance, inventory health, supplier reliability, and Autoship risk. As the program matured, I expanded supplier participation, automated reporting, standardized planning cadences, and established governance mechanisms that scaled the program to support more than 2,000 supplier relationships.',
     results: [
-      '5%+ reduction in out-of-stock rates',
-      '4% improvement in location-level availability',
-      '$10M+ in inventory and operational savings',
-      '40%+ increase in planning productivity',
+      'Reduced out-of-stock rates by more than 5% across participating suppliers',
+      'Improved location-level product availability by more than 4%',
+      'Generated more than $10 million in inventory and supply chain optimization savings',
+      'Scaled from an initial pilot to support more than 2,000 supplier relationships',
+      'Developed and automated 8+ supplier-facing reporting solutions and 10+ executive dashboards',
+      'Established recurring WBR, MBR, QBR, and Joint Business Planning processes across strategic suppliers',
+      'Improved forecast alignment, supply visibility, and risk identification across five business verticals and 20,000+ SKUs',
     ],
+    impact:
+      'What began as a response to supply chain disruption evolved into a strategic enterprise capability. The CPFR program transformed supplier collaboration from a fragmented, reactive process into a scalable operating model that improved product availability, strengthened supplier partnerships, enhanced executive decision-making, and created a foundation for long-term supply chain resilience across the organization.',
+    pdf: '/cpfr-case-study.pdf',
     tags: ['S&OP', 'CPFR', 'Forecasting'],
   },
   {

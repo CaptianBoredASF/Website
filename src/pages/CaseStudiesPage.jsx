@@ -35,29 +35,6 @@ export default function CaseStudiesPage() {
                 </div>
               )}
 
-              <div className="project-header">
-                <div>
-                  <p className="case-study-company">{study.company}</p>
-                  <h3>{study.title}</h3>
-                  <p>{study.description}</p>
-                  <div className="tags">
-                    {study.tags.map((tag) => (
-                      <span key={tag} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-                {study.pdf && (
-                  <a
-                    href={study.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary btn-sm"
-                  >
-                    View Full Case Study
-                  </a>
-                )}
-              </div>
-
               <div className="case-study-sections">
                 <div className="case-study-block">
                   <h4>Challenge</h4>

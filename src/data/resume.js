@@ -149,13 +149,12 @@ export const skillGroups = [
 export const caseStudies = [
   {
     id: 'cpfr-planning',
+    navLabel: 'CPFR',
     title: 'Enterprise CPFR Program',
     company: 'Chewy',
     image: '/cpfr-case-study-hero.png',
     imageAlt:
       'Building an Enterprise CPFR Program from the Ground Up — infographic showing launch, pilot, framework, scale, enterprise rollout, and results.',
-    description:
-      'Designed and launched Chewy\'s Collaborative Planning, Forecasting & Replenishment (CPFR) program in response to COVID-era supply chain volatility, scaling from pilot to 2,000+ supplier relationships.',
     challenge:
       'In 2022, I was hired to design and launch Chewy\'s CPFR program in response to unprecedented volatility created by COVID-era supply chain disruptions. While isolated supplier partnerships had demonstrated success through limited data sharing and forecasting collaboration, there was no standardized process, operating model, governance structure, or technology framework capable of scaling these efforts across the enterprise.\n\nThe program supported five business verticals, more than 20,000 SKUs, and over 3,000 supplier relationships. Suppliers were navigating production constraints, transportation delays, labor shortages, and rapidly shifting consumer demand patterns. Forecast alignment varied considerably by category, while stakeholders lacked visibility into the root causes of service failures, inventory risk, and supplier performance issues.\n\nExecutive leadership needed a more proactive approach to managing inventory investments and product availability. Existing planning processes relied heavily on reactive communication and disconnected reporting, making it difficult to identify risks early enough to prevent customer impact or make informed supply chain decisions.',
     approach:
@@ -172,7 +171,44 @@ export const caseStudies = [
     impact:
       'What began as a response to supply chain disruption evolved into a strategic enterprise capability. The CPFR program transformed supplier collaboration from a fragmented, reactive process into a scalable operating model that improved product availability, strengthened supplier partnerships, enhanced executive decision-making, and created a foundation for long-term supply chain resilience across the organization.',
     pdf: '/cpfr-case-study.pdf',
-    tags: ['S&OP', 'CPFR', 'Forecasting'],
+  },
+  {
+    id: 'supply-planning',
+    navLabel: 'Supply Planning',
+    title: 'Enterprise Supply Planning',
+    company: 'Chewy',
+    challenge:
+      'Chewy needed integrated planning capabilities spanning demand planning, replenishment, supplier engagement, and S&OP/S&OE across a rapidly scaling eCommerce supply chain. Planning teams lacked a unified process to align demand, supply, merchandising, and operations at enterprise scale, and leadership needed faster visibility into inventory risk, service failures, and replenishment exceptions.',
+    approach:
+      'Built integrated supply planning workflows across demand planning, replenishment, and supplier engagement while institutionalizing governance and escalation across 20+ critical supply chain metrics. Deployed 10+ Tableau dashboards paired with SOPs and operating playbooks, translating complex supply and demand signals into repeatable, decision-ready workflows. Created Non-Optimal Placement (NOP) as a top-five supply chain metric and launched exception-based reporting to accelerate decision cycles.',
+    results: [
+      '5%+ reduction in out-of-stock rates and 4% improvement in location-level availability',
+      '$10M+ in inventory and operational savings through replenishment optimization',
+      '40%+ increase in planning productivity via automated reporting and API-driven supplier integrations',
+      '8+ automated supplier-facing reports and real-time decision-support pipelines',
+      '20%+ acceleration in decision cycles through exception-based reporting',
+    ],
+    impact:
+      'Established a scalable supply planning capability that improved in-stock performance, reduced inventory volatility, and gave planning and leadership teams a shared framework for proactive decision-making across the network.',
+  },
+  {
+    id: 'vendor-compliance',
+    navLabel: 'Vendor Compliance',
+    title: 'Vendor Compliance Transformation',
+    company: 'Chewy',
+    challenge:
+      'Legacy vendor compliance processes lacked scalability, data visibility, and executive alignment across a growing supplier base supporting a multi-billion-dollar supply chain network. Chewy needed to transform compliance from a reactive operational function into a strategic performance and revenue engine.',
+    approach:
+      'Built a cross-functional team spanning program management, business engineering, and analytics; redesigned governance, chargeback logic, and supplier performance reporting. Launched a net-new enterprise chargeback platform across 10 defect categories and standardized execution across 24 compliance specialists enterprise-wide.',
+    results: [
+      '$20M in incremental annual value through improved compliance and labor efficiency',
+      '$12M in incremental annual revenue from a new enterprise chargeback platform',
+      '30%+ reduction in vendor defect rates',
+      '15% improvement in EDI (855/856) compliance and 5% improvement in carrier OTIF',
+      '$30M+ in executive-approved automation, quality, and equipment investments',
+    ],
+    impact:
+      'Transformed vendor compliance into a strategic business function that improved supplier performance, recovered revenue, and created scalable governance across Chewy\'s supplier network.',
   },
 ]
 

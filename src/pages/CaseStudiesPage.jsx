@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { caseStudies } from '../data/resume'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function CaseStudiesPage() {
-  const study = caseStudies[0]
+  const [activeStudy, setActiveStudy] = useState(caseStudies[0]?.id ?? null)
+  const study = caseStudies.find((item) => item.id === activeStudy)
 
   if (!study) return null
 
@@ -19,6 +21,18 @@ export default function CaseStudiesPage() {
             <p className="section-lead">
               Selected programs highlighting strategy, execution, and measurable business impact.
             </p>
+            <nav className="case-study-nav" aria-label="Case study topics">
+              {caseStudies.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`case-study-nav-btn ${activeStudy === item.id ? 'active' : ''}`}
+                  onClick={() => setActiveStudy(item.id)}
+                >
+                  {item.navLabel ?? item.title}
+                </button>
+              ))}
+            </nav>
           </div>
         </section>
 

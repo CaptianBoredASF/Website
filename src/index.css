@@ -173,6 +173,40 @@ a:hover {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.case-study-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.case-study-nav-btn {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.88);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.case-study-nav-btn:hover,
+.case-study-nav-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.case-study-nav-btn.active {
+  background: var(--accent);
+  border-color: var(--accent-light);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;

@@ -198,10 +198,6 @@ export default function HomePage() {
               {siteConfig.phone && (
                 <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}>{siteConfig.phone}</a>
               )}
-              {siteConfig.domain && (
-                <a href={siteConfig.domain}>{siteConfig.domain.replace('https://', '')}</a>
-              )}
-              <span className="muted">{siteConfig.location}</span>
               {siteConfig.linkedin && (
                 <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
               )}

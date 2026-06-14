@@ -92,21 +92,32 @@ export const experience = [
     company: 'PepsiCo',
     location: 'Denver, CO',
     period: '2015 — 2018',
-    highlights: [],
+    highlights: [
+      'Managed regional transportation, warehousing, dispatch, and logistics operations across the Mountain region, driving service performance, cost optimization, and operational efficiency.',
+      'Improved transportation productivity and service performance, exceeding regional KPI targets by 9% while delivering $300K in annual savings.',
+      'Developed executive dashboards and operational planning tools that improved financial visibility, root-cause analysis, and network optimization across multiple markets.',
+    ],
   },
   {
     role: 'Warehouse Inventory Analyst',
     company: 'Kasco',
     location: 'St. Louis, MO',
     period: '2014 — 2015',
-    highlights: [],
+    highlights: [
+      'Designed inventory management systems and analytical tools to improve warehouse performance, inventory utilization, supplier collaboration, and logistics efficiency across a network of 100+ locations.',
+      'Reduced inventory carrying costs by $200K annually through inventory optimization and management of 100+ satellite warehouses.',
+      'Built inventory and vendor-return analytics solutions that increased vendor returns by 300% and reduced freight costs through shipment consolidation strategies.',
+    ],
   },
   {
     role: 'Transportation and Logistics Analyst',
     company: 'Anheuser-Busch',
     location: 'St. Louis, MO',
     period: '2013 — 2014',
-    highlights: [],
+    highlights: [
+      'Managed transportation analytics and carrier performance for temperature-sensitive food products, ensuring cold-chain compliance, delivery reliability, and product quality across a national distribution network.',
+      'Partnered with carriers and operations teams to identify performance gaps, improve route execution, and develop reporting processes that increased visibility into transportation performance.',
+    ],
   },
 ]
 

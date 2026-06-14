@@ -149,7 +149,7 @@ export const skillGroups = [
 export const caseStudies = [
   {
     id: 'cpfr-planning',
-    navLabel: 'CPFR',
+    navLabel: 'Supplier Collaboration',
     title: 'Enterprise CPFR Program',
     company: 'Chewy',
     image: '/cpfr-case-study-hero.png',
@@ -174,7 +174,7 @@ export const caseStudies = [
   },
   {
     id: 'supply-planning',
-    navLabel: 'Supply Planning',
+    navLabel: 'Supply Chain Planning',
     title: 'Enterprise Supply Planning',
     company: 'Chewy',
     image: '/supply-planning-case-study-hero.png',
@@ -200,7 +200,7 @@ export const caseStudies = [
   },
   {
     id: 'vendor-compliance',
-    navLabel: 'Vendor Compliance',
+    navLabel: 'Supplier Governance',
     title: 'Vendor Compliance Transformation',
     company: 'Chewy',
     image: '/vendor-compliance-case-study-hero.png',

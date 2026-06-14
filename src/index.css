@@ -143,13 +143,34 @@ a:hover {
 }
 
 /* Hero */
-.hero {
-  padding: 4rem 0 5rem;
+.hero,
+.page-hero {
   background:
     radial-gradient(circle at 85% 20%, rgba(37, 99, 235, 0.28), transparent 28%),
     radial-gradient(circle at 70% 60%, rgba(59, 130, 246, 0.12), transparent 35%),
     linear-gradient(180deg, var(--hero-bg) 0%, var(--hero-bg-alt) 100%);
   color: #fff;
+}
+
+.hero {
+  padding: 4rem 0 5rem;
+}
+
+.page-hero {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.page-hero .eyebrow {
+  color: #60a5fa;
+}
+
+.page-hero .section-title {
+  color: #fff;
+}
+
+.page-hero .section-lead {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .hero-grid {
@@ -545,10 +566,6 @@ a:hover {
   font-weight: 600;
   color: var(--accent);
   margin: 0 0 1rem;
-}
-
-.page-hero {
-  padding-top: 3rem;
 }
 
 .page-hero-inner {

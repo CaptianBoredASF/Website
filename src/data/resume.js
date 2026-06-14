@@ -177,19 +177,26 @@ export const caseStudies = [
     navLabel: 'Supply Planning',
     title: 'Enterprise Supply Planning',
     company: 'Chewy',
+    image: '/supply-planning-case-study-hero.png',
+    imageAlt:
+      'Supply planning operating model infographic showing demand planning, inventory management, replenishment, supplier performance, risk management, and S&OP governance.',
     challenge:
-      'Chewy needed integrated planning capabilities spanning demand planning, replenishment, supplier engagement, and S&OP/S&OE across a rapidly scaling eCommerce supply chain. Planning teams lacked a unified process to align demand, supply, merchandising, and operations at enterprise scale, and leadership needed faster visibility into inventory risk, service failures, and replenishment exceptions.',
+      'Managing a supply chain is ultimately a balancing act between customer service, inventory investment, operational efficiency, and financial performance. While many organizations focus on individual metrics such as forecast accuracy, inventory turns, or fill rates, sustainable success requires a connected operating model where every decision is evaluated through its impact on the broader supply chain ecosystem.\n\nAcross my career managing multi-billion-dollar product portfolios, thousands of suppliers, and complex distribution networks, I have found that supply chain performance is driven by a small number of interconnected disciplines: demand forecasting, inventory strategy, replenishment planning, supplier performance, risk management, and executive decision-making. Weakness in any one area can create downstream impacts ranging from stockouts and lost sales to excess inventory and increased working capital requirements.\n\nThe challenge for supply chain leaders is not simply reacting to operational issues as they occur, but creating the visibility, governance, and decision-making frameworks required to proactively identify risks, align stakeholders, and drive continuous improvement.',
     approach:
-      'Built integrated supply planning workflows across demand planning, replenishment, and supplier engagement while institutionalizing governance and escalation across 20+ critical supply chain metrics. Deployed 10+ Tableau dashboards paired with SOPs and operating playbooks, translating complex supply and demand signals into repeatable, decision-ready workflows. Created Non-Optimal Placement (NOP) as a top-five supply chain metric and launched exception-based reporting to accelerate decision cycles.',
+      'My approach to supply chain management centers around six core pillars:\n\nDemand Planning & Forecast Accuracy serves as the foundation of every supply chain. Understanding demand patterns, measuring forecast accuracy through WAPE and forecast bias, evaluating promotional impacts, and identifying demand variability enables organizations to make informed inventory and supply decisions.\n\nInventory & Working Capital Management ensures inventory investments are aligned to customer service objectives. This includes managing safety stock, days of supply, excess inventory, inventory turns, and deployment strategies to balance availability with financial performance.\n\nSupply Planning & Replenishment converts demand into executable supply plans. Effective supply planning requires balancing inventory positions, supplier constraints, lead times, replenishment parameters, and network capacity while maintaining target service levels.\n\nSupplier Performance Management focuses on ensuring suppliers execute consistently against expectations. Through scorecards, business reviews, fill-rate monitoring, lead-time management, and collaborative planning processes, organizations can improve reliability while reducing operational variability.\n\nRisk & Exception Management provides visibility into disruptions before they impact customers. By monitoring inventory risks, supply constraints, forecast exceptions, and operational performance indicators, teams can proactively mitigate issues and reduce business exposure.\n\nFinally, S&OP and Executive Governance align all stakeholders around a single plan. Weekly Business Reviews (WBRs), Monthly Business Reviews (MBRs), forecasting reviews, inventory reviews, and executive decision forums create the structure necessary to make informed tradeoff decisions across service, inventory, and profitability objectives.',
     results: [
-      '5%+ reduction in out-of-stock rates and 4% improvement in location-level availability',
-      '$10M+ in inventory and operational savings through replenishment optimization',
-      '40%+ increase in planning productivity via automated reporting and API-driven supplier integrations',
-      '8+ automated supplier-facing reports and real-time decision-support pipelines',
-      '20%+ acceleration in decision cycles through exception-based reporting',
+      'Managed supply chains supporting more than $5 billion in annual revenue',
+      'Oversaw inventory strategies across 20,000+ SKUs and thousands of supplier relationships',
+      'Reduced out-of-stock rates by more than 5% while improving product availability',
+      'Improved forecast alignment through structured WAPE, forecast bias, and reconciliation processes',
+      'Generated more than $10 million in inventory optimization savings',
+      'Avoided approximately $80 million in inventory exposure through proactive planning and inventory management decisions',
+      'Improved supplier performance through structured governance, scorecards, and collaborative planning initiatives',
+      'Developed executive reporting frameworks that transformed operational data into actionable business intelligence',
     ],
     impact:
-      'Established a scalable supply planning capability that improved in-stock performance, reduced inventory volatility, and gave planning and leadership teams a shared framework for proactive decision-making across the network.',
+      'The most effective supply chains are not built through isolated initiatives or individual metrics. They are built through disciplined execution across forecasting, inventory management, replenishment, supplier performance, risk management, and executive governance.\n\nBy creating visibility into the drivers of supply chain performance and establishing repeatable decision-making processes, organizations can improve customer service, optimize working capital, reduce operational volatility, and create sustainable long-term value. This philosophy has guided every supply chain transformation I have led and continues to serve as the foundation for scalable, high-performing supply chain organizations.',
+    pdf: '/supply-planning-case-study.pdf',
   },
   {
     id: 'vendor-compliance',

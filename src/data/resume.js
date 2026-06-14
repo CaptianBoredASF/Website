@@ -6,7 +6,7 @@ export const siteConfig = {
   title: 'Senior Operations and Program Leader',
   heroBadge: 'Supply Chain Executive',
   tagline:
-    'Supply Chain Executive with 13+ years of experience leading billion-dollar businesses through transformative planning, inventory, and operational strategies. Proven track record delivering $100M+ in value by optimizing supply chains, scaling S&OP capabilities, improving customer experience, and building high-performing teams across retail, eCommerce, and consumer products.',
+    'Results-driven Supply Chain Executive with 13+ years of experience leading end-to-end planning, inventory, and operational functions across multi-billion-dollar businesses. Successfully delivered $100M+ in value through strategic supply chain transformation, S&OP leadership, working capital optimization, and customer experience improvements. Known for building high-performing teams, influencing executive stakeholders, and scaling processes that improve service, efficiency, and financial performance.',
   email: 'Nathan.Nelson.D@gmail.com',
   phone: '(314) 566-4757',
   location: 'Fort Lauderdale, FL',

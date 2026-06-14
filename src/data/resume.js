@@ -196,19 +196,25 @@ export const caseStudies = [
     navLabel: 'Vendor Compliance',
     title: 'Vendor Compliance Transformation',
     company: 'Chewy',
+    image: '/vendor-compliance-case-study-hero.png',
+    imageAlt:
+      'Vendor Compliance program transformation infographic showing governance, metrics, supplier engagement, and operational performance outcomes.',
     challenge:
-      'Legacy vendor compliance processes lacked scalability, data visibility, and executive alignment across a growing supplier base supporting a multi-billion-dollar supply chain network. Chewy needed to transform compliance from a reactive operational function into a strategic performance and revenue engine.',
+      'As Chewy continued to scale its supplier network, maintaining operational consistency, visibility, and accountability across more than 3,000 active vendors became increasingly complex. The Vendor Compliance program served as the foundation for supplier governance, establishing standards across Electronic Data Interchange (EDI), packaging requirements, pallet specifications, transportation execution, and operational performance through a comprehensive 94-page Vendor Compliance Manual.\n\nThe challenge extended beyond policy management. Supplier performance was measured through 22 core compliance metrics and more than 40 supporting sub-metrics, each designed to evaluate critical aspects of operational execution. As the business grew, leadership required a scalable framework capable of measuring compliance performance, identifying operational risks, and driving accountability across a highly diverse supplier network.\n\nFulfillment operations, transportation teams, supply chain leaders, and vendor managers needed greater visibility into the root causes of recurring supplier defects, shipment delays, inventory inaccuracies, packaging failures, and data quality issues. The organization required a governance model that balanced operational rigor with strategic supplier partnerships while supporting Chewy\'s customer-first mission.',
     approach:
-      'Built a cross-functional team spanning program management, business engineering, and analytics; redesigned governance, chargeback logic, and supplier performance reporting. Launched a net-new enterprise chargeback platform across 10 defect categories and standardized execution across 24 compliance specialists enterprise-wide.',
+      'I led the transformation of the Vendor Compliance program by aligning policy governance, performance measurement, reporting, and supplier engagement into a unified operational framework. My responsibility included maintaining and operationalizing the Vendor Compliance Manual while ensuring compliance requirements remained scalable, measurable, and aligned with evolving business needs.\n\nTo improve visibility and accountability, I oversaw the framework governing 22 primary compliance metrics and more than 40 supporting sub-metrics. These measurements provided comprehensive insight into supplier execution across EDI performance, purchase order fulfillment, appointment compliance, packaging quality, transportation execution, damages, overages, and other operational performance indicators.\n\nA key component of the transformation was developing reporting and analytical capabilities that converted operational data into actionable business intelligence. By creating enterprise-wide visibility into supplier performance trends, internal stakeholders could identify recurring defects, prioritize risks, measure improvement opportunities, and focus corrective actions on the factors most impacting operational performance.\n\nI also partnered closely with Fulfillment Operations, Transportation, Supply Chain, Merchandising, Finance, Vendor Management, and Business Intelligence teams to establish governance processes, supplier scorecards, recurring business reviews, escalation pathways, and performance improvement mechanisms.',
     results: [
-      '$20M in incremental annual value through improved compliance and labor efficiency',
-      '$12M in incremental annual revenue from a new enterprise chargeback platform',
-      '30%+ reduction in vendor defect rates',
-      '15% improvement in EDI (855/856) compliance and 5% improvement in carrier OTIF',
-      '$30M+ in executive-approved automation, quality, and equipment investments',
+      'Standardized performance measurement across 22 primary metrics and 40+ supporting metrics',
+      'Increased visibility into supplier performance trends, operational defects, and compliance risks',
+      'Improved identification and prioritization of recurring operational issues through data-driven reporting',
+      'Strengthened supplier accountability through scorecards, business reviews, and performance management processes',
+      'Enhanced compliance across EDI, packaging, palletization, transportation, and operational execution requirements',
+      'Established a scalable supplier governance framework capable of supporting continued business growth',
+      'Conducted more than 100 supplier business reviews to drive corrective actions and continuous improvement',
     ],
     impact:
-      'Transformed vendor compliance into a strategic business function that improved supplier performance, recovered revenue, and created scalable governance across Chewy\'s supplier network.',
+      'What began as a compliance program evolved into a strategic supplier governance capability. By combining policy management, performance analytics, operational reporting, and cross-functional collaboration, the program created greater transparency, stronger supplier accountability, and more consistent execution across Chewy\'s supply chain network.\n\nMost importantly, the initiative helped improve operational reliability at scale by reducing friction within fulfillment operations, strengthening supplier partnerships, and enabling a more consistent customer experience. The Vendor Compliance program became a critical mechanism for driving operational excellence across one of the largest supplier networks in the pet retail industry.',
+    pdf: '/vendor-compliance-case-study.pdf',
   },
 ]
 

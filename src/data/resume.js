@@ -115,8 +115,9 @@ export const experience = [
     location: 'St. Louis, MO',
     period: '2013 — 2014',
     highlights: [
-      'Managed transportation analytics and carrier performance for temperature-sensitive food products, ensuring cold-chain compliance, delivery reliability, and product quality across a national distribution network.',
-      'Partnered with carriers and operations teams to identify performance gaps, improve route execution, and develop reporting processes that increased visibility into transportation performance.',
+      'Managed transportation analytics and carrier performance for temperature-sensitive food products, ensuring cold-chain compliance, delivery reliability, and product quality across a national distribution network. Partnered with carriers and operations teams to identify performance gaps, improve route execution, and develop reporting processes that increased visibility into transportation performance.',
+      'Analyzed carrier, route, and temperature-performance data across 5 refrigerated transportation providers and 100+ delivery lanes, identifying root causes of service failures and reducing temperature-related excursions by 15%.',
+      'Developed transportation reporting and performance-tracking processes that improved carrier accountability and route visibility, contributing to a 10% improvement in on-time delivery performance and a 20% reduction in recurring transportation issues.',
     ],
   },
 ]

@@ -145,30 +145,15 @@ export const skillGroups = [
   },
 ]
 
-// Replace with your real case studies.
+// Case studies
 export const caseStudies = [
-  {
-    id: 'vendor-compliance',
-    title: 'Vendor Compliance Transformation',
-    company: 'Chewy',
-    description:
-      'Transformed vendor compliance into a strategic business function supporting a multi-billion-dollar supply chain network.',
-    challenge:
-      'Legacy compliance processes lacked scalability, data visibility, and executive alignment across a growing supplier base.',
-    approach:
-      'Built a cross-functional team spanning program management, business engineering, and analytics; redesigned governance, chargeback logic, and supplier performance reporting.',
-    results: [
-      '$20M in annual value through improved compliance and labor efficiency',
-      '$12M in annual revenue from a new enterprise chargeback platform',
-      '30%+ reduction in vendor defect rates',
-      '$30M+ in executive-approved automation and quality investments',
-    ],
-    tags: ['Supply Chain', 'Vendor Management', 'Automation'],
-  },
   {
     id: 'cpfr-planning',
     title: 'Enterprise CPFR Program',
     company: 'Chewy',
+    image: '/cpfr-case-study-hero.png',
+    imageAlt:
+      'Building an Enterprise CPFR Program from the Ground Up — infographic showing launch, pilot, framework, scale, enterprise rollout, and results.',
     description:
       'Designed and launched Chewy\'s Collaborative Planning, Forecasting & Replenishment (CPFR) program in response to COVID-era supply chain volatility, scaling from pilot to 2,000+ supplier relationships.',
     challenge:
@@ -188,23 +173,6 @@ export const caseStudies = [
       'What began as a response to supply chain disruption evolved into a strategic enterprise capability. The CPFR program transformed supplier collaboration from a fragmented, reactive process into a scalable operating model that improved product availability, strengthened supplier partnerships, enhanced executive decision-making, and created a foundation for long-term supply chain resilience across the organization.',
     pdf: '/cpfr-case-study.pdf',
     tags: ['S&OP', 'CPFR', 'Forecasting'],
-  },
-  {
-    id: 'apple-portfolio',
-    title: 'Apple Portfolio & NPI Launch',
-    company: 'T-Mobile',
-    description:
-      'Led the $1.5B Apple US retail portfolio across 7,000+ stores and 1,000+ SKUs.',
-    challenge:
-      'Manage complex NPI launches, merger integration, and inventory performance across a national retail network.',
-    approach:
-      'Aligned planning systems, stakeholder processes, and launch execution across retail, procurement, and IT teams.',
-    results: [
-      'Year-end retail stock-out of 2% vs. 3% target, saving $80M in inventory',
-      'Launched $1B+ Apple NPI program across three major product releases',
-      'Led Sprint merger store transitions across 3,000+ locations',
-    ],
-    tags: ['Retail', 'NPI', 'Inventory'],
   },
 ]
 

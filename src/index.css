@@ -940,6 +940,21 @@ a:hover {
   text-align: left;
 }
 
+.case-study-hero-image-wrap {
+  margin-bottom: 1.5rem;
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.case-study-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .case-study-company {
   margin: 0 0 0.35rem;
   font-weight: 600;

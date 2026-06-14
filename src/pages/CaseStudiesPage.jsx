@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import { caseStudies } from '../data/resume'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function CaseStudiesPage() {
-  const [activeStudy, setActiveStudy] = useState(caseStudies[0]?.id ?? null)
-  const selected = caseStudies.find((study) => study.id === activeStudy)
+  const study = caseStudies[0]
+
+  if (!study) return null
 
   return (
     <>
@@ -24,70 +24,65 @@ export default function CaseStudiesPage() {
 
         <section className="section section-alt">
           <div className="container">
-            <div className="project-tabs">
-              {caseStudies.map((study) => (
-                <button
-                  key={study.id}
-                  type="button"
-                  className={`project-tab ${activeStudy === study.id ? 'active' : ''}`}
-                  onClick={() => setActiveStudy(study.id)}
-                >
-                  {study.title}
-                </button>
-              ))}
-            </div>
-
-            {selected && (
-              <article className="project-detail case-study-detail">
-                <div className="project-header">
-                  <div>
-                    <p className="case-study-company">{selected.company}</p>
-                    <h3>{selected.title}</h3>
-                    <p>{selected.description}</p>
-                    <div className="tags">
-                      {selected.tags.map((tag) => (
-                        <span key={tag} className="tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                  {selected.pdf && (
-                    <a
-                      href={selected.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary btn-sm"
-                    >
-                      View Full Case Study
-                    </a>
-                  )}
+            <article className="project-detail case-study-detail">
+              {study.image && (
+                <div className="case-study-hero-image-wrap">
+                  <img
+                    src={study.image}
+                    alt={study.imageAlt ?? study.title}
+                    className="case-study-hero-image"
+                  />
                 </div>
+              )}
 
-                <div className="case-study-sections">
-                  <div className="case-study-block">
-                    <h4>Challenge</h4>
-                    <p className="case-study-text">{selected.challenge}</p>
+              <div className="project-header">
+                <div>
+                  <p className="case-study-company">{study.company}</p>
+                  <h3>{study.title}</h3>
+                  <p>{study.description}</p>
+                  <div className="tags">
+                    {study.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
                   </div>
-                  <div className="case-study-block">
-                    <h4>Approach</h4>
-                    <p className="case-study-text">{selected.approach}</p>
-                  </div>
-                  <div className="case-study-block">
-                    <h4>Results</h4>
-                    <ul>
-                      {selected.results.map((result) => (
-                        <li key={result}>{result}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  {selected.impact && (
-                    <div className="case-study-block">
-                      <h4>Impact</h4>
-                      <p className="case-study-text">{selected.impact}</p>
-                    </div>
-                  )}
                 </div>
-              </article>
-            )}
+                {study.pdf && (
+                  <a
+                    href={study.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary btn-sm"
+                  >
+                    View Full Case Study
+                  </a>
+                )}
+              </div>
+
+              <div className="case-study-sections">
+                <div className="case-study-block">
+                  <h4>Challenge</h4>
+                  <p className="case-study-text">{study.challenge}</p>
+                </div>
+                <div className="case-study-block">
+                  <h4>Approach</h4>
+                  <p className="case-study-text">{study.approach}</p>
+                </div>
+                <div className="case-study-block">
+                  <h4>Results</h4>
+                  <ul>
+                    {study.results.map((result) => (
+                      <li key={result}>{result}</li>
+                    ))}
+                  </ul>
+                </div>
+                {study.impact && (
+                  <div className="case-study-block">
+                    <h4>Impact</h4>
+                    <p className="case-study-text">{study.impact}</p>
+                  </div>
+                )}
+              </div>
+            </article>
           </div>
         </section>
       </main>

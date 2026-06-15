@@ -241,11 +241,11 @@ export const caseStudies = [
 export const tableauProjects = [
   {
     id: 'supply-chain-dashboard',
-    title: 'Supply Chain Dashboard',
+    title: '',
     description:
-      'Executive supply chain performance view with KPIs, demand vs forecast trends, and category-level insights for operational decision-making.',
+      'Overview: Interactive executive rollup (400 SKUs, 10 DCs, Jan 2023–Dec 2025) with fill rate, service level, WAPE, and forecast accuracy by category and region. Highlights the 2023 COVID-style collapse, 2024 recovery, and normalized 2025 spreads for ops and planning reviews.',
     url: 'https://public.tableau.com/views/SupplyChainDashboard_17813813310900/Dashboard1',
-    tags: ['Supply Chain', 'Forecasting', 'Tableau'],
+    tags: [],
     embedWidth: 1600,
     embedHeight: 927,
   },

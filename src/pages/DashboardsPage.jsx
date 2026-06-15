@@ -35,13 +35,15 @@ export default function DashboardsPage() {
                 <article key={project.id} id={project.id} className="project-detail">
                   <div className="project-header">
                     <div>
-                      <h3>{project.title}</h3>
+                      {project.title ? <h3>{project.title}</h3> : null}
                       <p>{project.description}</p>
-                      <div className="tags">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="tag">{tag}</span>
-                        ))}
-                      </div>
+                      {project.tags?.length > 0 ? (
+                        <div className="tags">
+                          {project.tags.map((tag) => (
+                            <span key={tag} className="tag">{tag}</span>
+                          ))}
+                        </div>
+                      ) : null}
                     </div>
                     <a
                       href={project.url.split('?:')[0]}
@@ -54,7 +56,7 @@ export default function DashboardsPage() {
                   </div>
                   <TableauEmbed
                     url={project.url}
-                    title={project.title}
+                    title={project.title || project.description.slice(0, 80)}
                     embedWidth={project.embedWidth}
                     embedHeight={project.embedHeight}
                   />

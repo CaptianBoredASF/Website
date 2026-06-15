@@ -60,6 +60,9 @@ export default function CaseStudiesPage() {
                 </div>
                 <div className="case-study-block">
                   <h4>Results</h4>
+                  {study.resultsIntro ? (
+                    <p className="case-study-text">{study.resultsIntro}</p>
+                  ) : null}
                   <ul>
                     {study.results.map((result) => (
                       <li key={result}>{result}</li>

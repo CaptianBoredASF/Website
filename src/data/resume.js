@@ -3,8 +3,8 @@
 export const siteConfig = {
   name: 'Nathaniel Nelson',
   domain: 'https://nathanielnelsond.com',
-  title: 'Supply Chain, Operations, and Business Transformation Leader',
-  heroBadge: 'Supply Chain · Operations · Transformation',
+  title: 'Supply Chain and Transformation Leader',
+  heroBadge: 'Supply Chain · Transformation',
   tagline:
     'With 13+ years of experience driving large-scale transformation across planning, inventory, supplier performance, customer experience, and operational strategy. Proven track record delivering $100M+ in enterprise value through supply chain optimization, governance modernization, working capital improvement, and technology-enabled process transformation. Experienced leading cross-functional teams, influencing executive stakeholders, and building scalable operating models across multi-billion-dollar retail and eCommerce organizations.',
   email: 'Nathan.Nelson.D@gmail.com',

@@ -12,6 +12,8 @@ export const siteConfig = {
   location: 'Fort Lauderdale, FL',
   linkedin: 'https://linkedin.com/in/NathanNel',
   resumePdf: '/resume.pdf',
+  // Set to true to restore Tool Box in header nav and homepage hero.
+  showToolbox: false,
 }
 
 export const about = {

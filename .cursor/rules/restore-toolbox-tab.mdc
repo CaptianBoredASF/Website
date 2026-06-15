@@ -1,0 +1,27 @@
+---
+description: Reminder — Tool Box tab is hidden on the resume site; restore when ready
+globs: resume-site/**
+alwaysApply: false
+---
+
+# Tool Box tab — temporarily hidden
+
+The **Tool Box** nav item and homepage hero button are hidden (June 2025).
+
+## Restore when ready
+
+In `src/data/resume.js`, set:
+
+```js
+showToolbox: true,
+```
+
+That re-enables the header tab and homepage link. The `/toolbox` route and page are still live at `/toolbox` for preview.
+
+## Files touched when hiding
+
+- `src/data/resume.js` — `siteConfig.showToolbox`
+- `src/components/Header.jsx` — filters toolbox from nav
+- `src/pages/HomePage.jsx` — conditional hero button
+
+When the user asks to work on the resume site or toolbox, mention this if `showToolbox` is still `false`.

@@ -4,6 +4,14 @@ Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 
 **Supply chain / Tableau dashboards:** also use `@SUPPLY_CHAIN.md` (synced with `../tableau-data-v2/PROJECT.md`).
 
+## TODO — restore Tool Box tab
+
+**Hidden:** June 2025. Tool Box is removed from header nav and homepage hero; `/toolbox` still works for preview.
+
+**To restore:** In `src/data/resume.js`, set `siteConfig.showToolbox` to `true`, then commit and push.
+
+Cursor rule: `.cursor/rules/restore-toolbox-tab.mdc` (reminds the agent when editing `resume-site/`).
+
 ## Overview
 
 | Item | Value |
@@ -39,7 +47,7 @@ Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 
 ## Header navigation
 
-About · Experience · Skills · Dashboards · Case Studies · Tool Box · Contact
+About · Experience · Skills · Dashboards · Case Studies · ~~Tool Box~~ (hidden) · Contact
 
 Sticky dark header on all pages. About is active by default on home (no hash).
 

@@ -49,7 +49,9 @@ export default function Header() {
         </Link>
 
         <nav className="nav">
-          {navItems.map((item) => (
+          {navItems
+            .filter((item) => siteConfig.showToolbox || item.id !== 'toolbox')
+            .map((item) => (
             <button
               key={item.id}
               type="button"

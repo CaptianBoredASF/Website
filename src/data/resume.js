@@ -251,11 +251,11 @@ export const tableauProjects = [
   },
   {
     id: 'forecast-accuracy-dashboard',
-    title: 'Weekly Forecast Review',
+    title: '',
     description:
-      'SKU × DC weekly forecast review with network WAPE KPIs, ranked forecast offenders, and category and region error drivers for operational exception management.',
+      'Overview: A weekly forecast exception queue built at SKU × DC grain — surface the worst offenders, quantify network error in units and WAPE, and slice bias by category and region. One week selector drives the action list; a separate trend line keeps the full 2023–2025 recovery arc in view.',
     url: 'https://public.tableau.com/views/ForecastAccuracy_17814856522190/Dashboard1',
-    tags: ['Demand Planning', 'WAPE', 'Tableau'],
+    tags: [],
     embedWidth: 1600,
     embedHeight: 927,
   },

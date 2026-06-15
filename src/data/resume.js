@@ -249,4 +249,14 @@ export const tableauProjects = [
     embedWidth: 1600,
     embedHeight: 927,
   },
+  {
+    id: 'forecast-accuracy-dashboard',
+    title: 'Weekly Forecast Review',
+    description:
+      'SKU × DC weekly forecast review with network WAPE KPIs, ranked forecast offenders, and category and region error drivers for operational exception management.',
+    url: 'https://public.tableau.com/views/ForecastAccuracy_17814856522190/Dashboard1',
+    tags: ['Demand Planning', 'WAPE', 'Tableau'],
+    embedWidth: 1600,
+    embedHeight: 927,
+  },
 ]

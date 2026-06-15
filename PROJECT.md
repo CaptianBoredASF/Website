@@ -2,6 +2,8 @@
 
 Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 
+**Supply chain / Tableau dashboards:** also use `@SUPPLY_CHAIN.md` (synced with `../tableau-data-v2/PROJECT.md`).
+
 ## Overview
 
 | Item | Value |
@@ -73,13 +75,22 @@ All roles have content. Early-career roles include:
 
 Chewy roles include RRC Entitlements (Jun 2026 — Present), Vendor Compliance (Aug 2024 — Jun 2026), CPFR and Supply (Mar 2022 — Aug 2024).
 
-## Tableau
+## Tableau & supply chain data
 
-**Only dashboard on site:**
+**Full context:** `@SUPPLY_CHAIN.md` — data paths, calculated fields, dashboard status, todo list.
 
-- **Title:** Supply Chain Dashboard
-- **URL:** `https://public.tableau.com/views/SupplyChainDashboard_17813813310900/Dashboard1`
-- **Native embed size:** 1600 × 927
+| Dashboard | Status | Data source |
+|-----------|--------|-------------|
+| Executive (Dashboard 1) | Done, on site | `tableau-data-v2/supply_chain_executive_rollup.csv` |
+| Weekly Forecast Review (Dashboard 2) | Done, on site | `tableau-data-v2/supply_chain_sku_master.csv` |
+| Oversupply (Dashboard 3) | Not started | `sku_dc_oversupply_summary.csv` |
+
+**On site today:**
+
+1. **Supply Chain Dashboard** — `SupplyChainDashboard_17813813310900/Dashboard1`
+2. **Weekly Forecast Review** — `ForecastAccuracy_17814856522190/Dashboard1`
+
+- **Native embed size:** 1600 × 927 (both dashboards)
 - **Layout:** Wide container `min(1600px, calc(100vw - 2rem))` in `DashboardsPage.jsx`
 - **Embed logic:** `TableauEmbed.jsx` renders at native size and CSS-scales to fit container width
 
@@ -159,7 +170,8 @@ Open http://localhost:5173
 
 - **Update resume PDF:** Replace `public/resume.pdf` (source often `Desktop\2026 Applying\June 2026\Resume.pdf`).
 - **Update hero text:** Edit `siteConfig` in `src/data/resume.js` and `index.html` meta tags.
-- **New Tableau dashboard:** Update `tableauProjects` in `resume.js` with `url`, `embedWidth`, `embedHeight`.
+- **New Tableau dashboard:** Update `tableauProjects` in `resume.js` with `url`, `embedWidth`, `embedHeight`. Update `SUPPLY_CHAIN.md` + `tableau-data-v2/PROJECT.md`.
+- **Supply chain data regen:** `python tableau-data-v2/scripts/generate_supply_chain_data.py` then Replace Data Source in Tableau.
 - **New case study PDF/image:** Add to `public/`, update `caseStudies` in `resume.js`; extract hero PNG from PDF page 1 if needed.
 - **New toolbox image:** Add PNG to `public/`, add entry in `src/data/toolbox.js`.
 - **SSL error on local PC only:** Site may work elsewhere; try incognito, `ipconfig /flushdns`, or mobile data.

@@ -3,6 +3,19 @@ import TableauEmbed from '../components/TableauEmbed'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+function ProjectDescription({ text }) {
+  if (text.startsWith('Overview:')) {
+    return (
+      <p>
+        <span className="dashboard-overview-label">Overview:</span>
+        {text.slice('Overview:'.length)}
+      </p>
+    )
+  }
+
+  return <p>{text}</p>
+}
+
 export default function DashboardsPage() {
   return (
     <>
@@ -34,9 +47,9 @@ export default function DashboardsPage() {
               {tableauProjects.map((project) => (
                 <article key={project.id} id={project.id} className="project-detail">
                   <div className="project-header">
-                    <div>
+                    <div className="project-header-text">
                       {project.title ? <h3>{project.title}</h3> : null}
-                      <p>{project.description}</p>
+                      <ProjectDescription text={project.description} />
                       {project.tags?.length > 0 ? (
                         <div className="tags">
                           {project.tags.map((tag) => (
@@ -45,14 +58,16 @@ export default function DashboardsPage() {
                         </div>
                       ) : null}
                     </div>
-                    <a
-                      href={project.url.split('?:')[0]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary btn-sm"
-                    >
-                      Open on Tableau Public
-                    </a>
+                    <div className="project-header-actions">
+                      <a
+                        href={project.url.split('?:')[0]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-sm"
+                      >
+                        Open on Tableau Public
+                      </a>
+                    </div>
                   </div>
                   <TableauEmbed
                     url={project.url}

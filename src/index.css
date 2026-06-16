@@ -635,6 +635,34 @@ a:hover {
   color: var(--text-muted);
 }
 
+.dashboards-executive-summary {
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.75rem;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.dashboards-executive-summary-title {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dashboards-executive-summary-text {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.dashboards-executive-summary-text:last-child {
+  margin-bottom: 0;
+}
+
 .timeline {
   display: grid;
   gap: 1.5rem;

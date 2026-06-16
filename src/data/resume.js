@@ -241,12 +241,19 @@ export const caseStudies = [
 ]
 
 // Tableau embed URL: Tableau Public → Share → Copy embed code → use the url value.
+export const dashboardExecutiveSummary = {
+  title: 'Executive Summary — Q4 2025 (Oct–Dec)',
+  paragraphs: [
+    'Network fill rate averaged 96.6% and service level 96.6% over the quarter. Lost sales totaled ~$45M. Forecast accuracy averaged 93.5% with weighted WAPE at 6.5%. The network is running close to the 97% fill / 96% service targets, but both metrics slipped ~30 bps on fill and ~20 bps on service versus Q3, and WAPE moved up ~100 bps over the same period. We are past the 2023 collapse and 2024 recovery — Q4 2025 is an operating quarter with residual gaps, not a network-wide outage.',
+    'Two exception queues drive weekly action. Forecast: 609 SKU-DC pairs are above 10% WAPE in the latest week; the network is ~5.7% over-forecast in units. Top offender: Chicago IL | Nova Accessory Plus 55 (ACC-0055) at 22.3% WAPE. Fill & service: 1,321 Critical and 321 Watch SKU-DC pairs in the trailing 4-week window, with ~$12.8M in lost sales. Top row: Chicago IL | Nova Smartphone 256GB 41 — 86.3% fill, 87.7% service, ~$51K lost sales. Midwest carries the highest Critical count (~550 pairs); Smartphones and Accessories lead lost sales by category. Chicago and Midwest are the first places to focus.',
+    'Inventory: the oversupply queue flags ~$2.1B in excess value across 2,485 Critical SKU-DC pairs. Primary drivers are MOQ/case-pack rounding, safety stock above target, and forecast over-bias pulling in more inventory than demand. Next steps: (1) reconcile forecast for ACC-0055 at Chicago and other top WAPE offenders before the next order cycle; (2) run supplier and replenishment reviews on Nova Smartphone 256GB 41 at Chicago and the Midwest Critical list to close fill/service gaps; (3) on oversupply, reset DOS targets and MOQ where excess value is highest, and stop auto-replenishment on pairs where forecast inflation is the listed driver until bias is corrected. Goal for next quarter: hold fill and service at target, pull WAPE back toward ~5.5%, and reduce excess value in the top Critical oversupply pairs.',
+  ],
+}
+
 export const tableauProjects = [
   {
     id: 'supply-chain-dashboard',
-    title: '',
-    description:
-      'Overview: Interactive executive rollup (400 SKUs, 10 DCs, Jan 2023–Dec 2025) with fill rate, service level, WAPE, and forecast accuracy by category and region. Highlights the 2023 COVID-style collapse, 2024 recovery, and normalized 2025 spreads for ops and planning reviews.',
+    embedTitle: 'Supply Chain Executive Dashboard',
     url: 'https://public.tableau.com/views/SupplyChainDashboard_17813813310900/Dashboard1',
     tags: [],
     embedWidth: 1600,
@@ -254,9 +261,7 @@ export const tableauProjects = [
   },
   {
     id: 'forecast-accuracy-dashboard',
-    title: '',
-    description:
-      'Overview: A weekly forecast exception queue built at SKU × DC grain — surface the worst offenders, quantify network error in units and WAPE, and slice bias by category and region. One week selector drives the action list; a separate trend line keeps the full 2023–2025 recovery arc in view.',
+    embedTitle: 'Forecast Accuracy Dashboard',
     url: 'https://public.tableau.com/views/ForecastAccuracy_17814856522190/Dashboard1',
     tags: [],
     embedWidth: 1600,
@@ -264,9 +269,7 @@ export const tableauProjects = [
   },
   {
     id: 'fill-service-exception-queue',
-    title: '',
-    description:
-      'Overview: Fill and service exception queue at SKU × DC grain — surfaces underperformers against target fill rate and service level over a trailing window, with week-over-week movement and category/region slices for operational triage.',
+    embedTitle: 'Fill Service Exception Queue',
     url: 'https://public.tableau.com/views/FillServiceExceptionQue/Dashboard1',
     tags: [],
     embedWidth: 1600,

@@ -1,20 +1,7 @@
-import { tableauProjects } from '../data/resume'
+import { tableauProjects, dashboardExecutiveSummary } from '../data/resume'
 import TableauEmbed from '../components/TableauEmbed'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-function ProjectDescription({ text }) {
-  if (text.startsWith('Overview:')) {
-    return (
-      <p>
-        <span className="dashboard-overview-label">Overview:</span>
-        {text.slice('Overview:'.length)}
-      </p>
-    )
-  }
-
-  return <p>{text}</p>
-}
 
 export default function DashboardsPage() {
   return (
@@ -43,21 +30,21 @@ export default function DashboardsPage() {
 
         <section className="section section-alt">
           <div className="dashboards-wide-wrap">
+            <div className="dashboards-executive-summary">
+              <h2 className="dashboards-executive-summary-title">
+                {dashboardExecutiveSummary.title}
+              </h2>
+              {dashboardExecutiveSummary.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)} className="dashboards-executive-summary-text">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
             <div className="dashboards-list">
               {tableauProjects.map((project) => (
                 <article key={project.id} id={project.id} className="project-detail">
                   <div className="project-header">
-                    <div className="project-header-text">
-                      {project.title ? <h3>{project.title}</h3> : null}
-                      <ProjectDescription text={project.description} />
-                      {project.tags?.length > 0 ? (
-                        <div className="tags">
-                          {project.tags.map((tag) => (
-                            <span key={tag} className="tag">{tag}</span>
-                          ))}
-                        </div>
-                      ) : null}
-                    </div>
                     <div className="project-header-actions">
                       <a
                         href={project.url.split('?:')[0]}
@@ -71,7 +58,7 @@ export default function DashboardsPage() {
                   </div>
                   <TableauEmbed
                     url={project.url}
-                    title={project.title || project.description.slice(0, 80)}
+                    title={project.embedTitle}
                     embedWidth={project.embedWidth}
                     embedHeight={project.embedHeight}
                   />

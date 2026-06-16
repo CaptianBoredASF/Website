@@ -13,6 +13,7 @@ import Footer from '../components/Footer'
 import DashboardPreview from '../components/DashboardPreview'
 import CompanyLogo from '../components/CompanyLogo'
 import HighlightText from '../components/HighlightText'
+import { trackResumeDownload } from '../utils/analytics'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -77,7 +78,12 @@ export default function HomePage() {
               </h1>
               <p className="hero-tagline">{siteConfig.tagline}</p>
               <div className="hero-actions">
-                <a className="btn btn-primary" href={siteConfig.resumePdf} download>
+                <a
+                  className="btn btn-primary"
+                  href={siteConfig.resumePdf}
+                  download
+                  onClick={() => trackResumeDownload('hero')}
+                >
                   <span aria-hidden="true">↓</span> Download Resume
                 </a>
                 <Link to="/dashboards" className="btn btn-outline-light">

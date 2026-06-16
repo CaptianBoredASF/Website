@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { siteConfig } from '../data/resume'
+import { trackResumeDownload } from '../utils/analytics'
 import Logo from './Logo'
 
 export const navItems = [
@@ -63,7 +64,12 @@ export default function Header() {
           ))}
         </nav>
 
-        <a className="btn btn-header-resume" href={siteConfig.resumePdf} download>
+        <a
+          className="btn btn-header-resume"
+          href={siteConfig.resumePdf}
+          download
+          onClick={() => trackResumeDownload('header')}
+        >
           <span aria-hidden="true">↓</span> Resume
         </a>
       </div>

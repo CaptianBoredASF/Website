@@ -262,4 +262,14 @@ export const tableauProjects = [
     embedWidth: 1600,
     embedHeight: 927,
   },
+  {
+    id: 'fill-service-exception-queue',
+    title: '',
+    description:
+      'Overview: Fill and service exception queue at SKU × DC grain — surfaces underperformers against target fill rate and service level over a trailing window, with week-over-week movement and category/region slices for operational triage.',
+    url: 'https://public.tableau.com/views/FillServiceExceptionQue/Dashboard1',
+    tags: [],
+    embedWidth: 1600,
+    embedHeight: 927,
+  },
 ]

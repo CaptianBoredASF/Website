@@ -6,7 +6,7 @@ export const siteConfig = {
   title: 'Supply Chain and Transformation Leader',
   heroBadge: 'Supply Chain · Transformation',
   tagline:
-    'With 13+ years of experience driving large-scale transformation across planning, inventory, supplier performance, customer experience, and operational strategy. Proven track record delivering $100M+ in enterprise value through supply chain optimization, governance modernization, working capital improvement, and technology-enabled process transformation. Experienced leading cross-functional teams, influencing executive stakeholders, and building scalable operating models across multi-billion-dollar retail and eCommerce organizations.',
+    'Supply Chain and Transformation Leader with 13+ years of experience driving large-scale transformation across planning, inventory, supplier performance, customer experience, and operational strategy. Proven track record delivering $100M+ in enterprise value through supply chain optimization, governance modernization, working capital improvement, and technology-enabled process transformation. Experienced leading cross-functional teams, executing complex enterprise programs, influencing executive stakeholders, and building scalable operating models across multi-billion-dollar retail and eCommerce organizations.',
   email: 'Nathan.Nelson.D@gmail.com',
   phone: '(314) 566-4757',
   location: 'Fort Lauderdale, FL',
@@ -23,31 +23,31 @@ export const about = {
 
 export const experience = [
   {
-    role: 'Senior Program Manager, RRC Entitlements and Policy Operations',
+    role: 'Senior Program Manager, Returns, Refunds & Concessions (RRC)',
     company: 'Chewy',
     location: 'Fort Lauderdale, FL',
-    period: 'Jun 2026 — Present',
+    period: 'May 2026 — Present',
     highlights: [
-      'Responsible for enterprise entitlement governance across Refunds, Replacements, Concessions, and Discounts & Adjustments (D&A), partnering with Product, Customer Care, Finance, Operations, and Engineering teams to translate policy into scalable customer outcomes. Own the development of decision frameworks, operational controls, and automated entitlement logic that improve policy adherence, reduce discretionary spend, and enable consistent execution across agent-assisted and self-service experiences.',
-      'Leading the development of enterprise entitlement governance for refunds, replacements, concessions, and D&A, defining decision frameworks, policy guardrails, escalation paths, and operational controls to support consistent customer outcomes and responsible financial stewardship.',
-      'Partnering with Product, Engineering, Customer Care, Finance, and Operations teams to operationalize policy requirements into scalable workflows, system capabilities, and automated decisioning solutions that improve execution quality and reduce manual intervention.',
-      'Establishing enterprise performance management mechanisms and governance processes to provide visibility into entitlement utilization, discretionary spend, policy adherence, override activity, and customer experience trends.',
-      'Driving root-cause analysis and resolution of complex customer and operational scenarios across Dropship, Third-Party (3P), Pharmacy, and other non-standard fulfillment channels, helping develop scalable governance models that balance customer satisfaction, operational efficiency, and cost management.',
+      'Lead enterprise entitlement governance across refunds, replacements, concessions, and discounts & adjustments (D&A), partnering across Product, Customer Care, Finance, Operations, Engineering, and Analytics to translate policy into scalable customer outcomes. Own decision frameworks, operational controls, and automated entitlement logic that improve policy adherence, reduce discretionary spend, and enable consistent execution across agent-assisted and self-service experiences.',
+      'Lead the development of enterprise entitlement frameworks, policy guardrails, escalation paths, and operational controls supporting consistent customer outcomes and financial stewardship.',
+      'Partner with Product, Engineering, and Analytics teams to operationalize policy requirements through scalable workflows, system capabilities, and automated decisioning solutions that improve execution quality and reduce manual intervention.',
+      'Establish performance management mechanisms and reporting processes providing visibility into entitlement utilization, policy adherence, discretionary spend, override activity, and customer experience trends.',
+      'Drive root-cause analysis and resolution of complex operational scenarios across Dropship, Pharmacy, Third-Party (3P), and other specialized fulfillment channels, developing scalable operating models that balance customer experience, operational efficiency, and cost management.',
     ],
   },
   {
     role: 'Senior Program Manager, Head of Vendor Performance and Compliance',
     company: 'Chewy',
     location: 'Fort Lauderdale, FL',
-    period: 'Aug 2024 — Jun 2026',
+    period: 'Aug 2024 — May 2026',
     highlights: [
-      'Accountable for defining and executing Chewy\'s vendor compliance and performance strategy, leading a team of 6 across program management, business engineering, and analytics. Own governance, strategic planning, operating model design, and multi-year initiatives balancing cost recovery, service reliability, throughput, and scalable growth, while partnering with C-suite leaders on white papers, investment prioritization, and strategic trade-offs.',
+      'Accountable for supplier performance, compliance, and operational governance across 3,000+ vendors, 20,000+ SKUs, and 13 distribution centers, ensuring supply chain reliability and scalable growth across Chewy\'s fulfillment network. Lead a cross-functional team spanning program management, business engineering, and analytics, overseeing EDI, supplier onboarding, systems integration, and product readiness. Own strategic planning, operating model design, and enterprise transformation initiatives focused on service, cost, and operational excellence.',
       'Transformed vendor compliance operating model into a data-driven performance and enterprise value engine, generating $20M in annual value, improving labor productivity by 15%, reducing vendor defect rates by 30%+, and lowering cost-to-serve across fulfillment operations.',
       'Launched a net-new enterprise chargeback platform across 10 defect categories, modernizing legacy processes into a scalable SPARK-enabled solution that generated $12M in annual revenue and delivered measurable ROI through automation, standardization, and defect reduction.',
       'Drove measurable vendor performance gains through expanded compliance metric adoption, increasing EDI (855/856) compliance by 15%, improving carrier OTIF by 5%, and raising packaging and dunnage compliance by 8%.',
       'Led 100+ executive-level vendor collaboration reviews, influencing $30M+ in strategic capital allocation decisions across automation, equipment investments, quality controls, and process modernization initiatives.',
       'Standardized governance and execution across 24 compliance specialists enterprise-wide, driving 30% improvement in logging performance, 15% in task prioritization, and 10% in data accuracy; introduced enhanced root-cause taxonomy and vendor-facing reporting to accelerate defect resolution and improve long-term performance.',
-      'Led and developed a high-performing, cross-functional team of 6 (PMs, BIEs, BIAs), implementing a scalable operating model with defined decision rights and quarterly OKRs tied to executive white papers and annual strategic priorities, driving accelerated execution and measurable enterprise outcomes.',
+      'Managed and developed a high-performing, cross-functional team of 6 (PMs, BIEs, BIAs), implementing a scalable operating model with defined decision rights and quarterly OKRs tied to executive white papers and annual strategic priorities, driving accelerated execution and measurable enterprise outcomes.',
     ],
   },
   {
@@ -56,7 +56,7 @@ export const experience = [
     location: 'Denver, CO',
     period: 'Mar 2022 — Aug 2024',
     highlights: [
-      'Led the design and launch of Chewy\'s CPFR operating model, developing integrated planning capabilities spanning demand planning, replenishment, supplier engagement, and S&OP/S&OE. Defined multi-horizon planning strategies and built risk and opportunity frameworks that improved network-wide in-stock performance across 2,000+ vendors.',
+      'Built and scaled Chewy\'s enterprise CPFR program, integrating demand planning, supply planning, replenishment, supplier collaboration, and S&OP/S&OE into a unified planning framework. Established forecasting, inventory, and supplier governance processes while developing planning tools, operating mechanisms, and executive decision forums that improved service levels, working capital efficiency, and execution quality across the supply chain.',
       'Drove enterprise-wide optimization of vendor production planning and replenishment, improving service levels while reducing working capital requirements, delivering 5%+ OOS reduction, 4% location-level OOS reduction, and $10M+ in optimized savings.',
       'Led monthly vendor performance reviews integrating supply and demand data; built API-driven data sharing and automated reporting pipelines (8+ reports), enabling real-time insights and driving 40%+ efficiency gains.',
       'Built and deployed 10+ Tableau dashboards paired with SOPs and operating playbooks, translating complex supply and demand signals into repeatable, decision-ready workflows adopted across planning and vendor teams.',
@@ -101,7 +101,7 @@ export const experience = [
     ],
   },
   {
-    role: 'Warehouse Inventory Analyst',
+    role: 'Field/Warehouse Inventory Analyst',
     company: 'Kasco',
     location: 'St. Louis, MO',
     period: '2014 — 2015',

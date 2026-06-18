@@ -2,7 +2,51 @@
 
 Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 
-**Supply chain / Tableau dashboards:** also use `@SUPPLY_CHAIN.md` (synced with `../tableau-data-v2/PROJECT.md`).
+**Last saved:** 2026-06-14  
+**Supply chain / Tableau:** also use `@SUPPLY_CHAIN.md` (synced with `../tableau-data-v2/PROJECT.md`).
+
+---
+
+## Session handoff — everything done (resume + portfolio)
+
+### Live site
+- **URL:** https://www.nathanielnelsond.com
+- **Repo:** https://github.com/CaptianBoredASF/Website.git
+- **Deploy:** Vercel on `git push`
+
+### Resume site (`resume-site/`)
+- **Hero:** Supply Chain and Transformation Leader (`siteConfig` in `resume.js` + `index.html` meta)
+- **Experience:** synced to June 2026 resume PDF (`Desktop\2026 Applying\June 2026\Resume.pdf`)
+- **Case studies:** Supplier Governance (VC) fully rewritten from June 2026 PDF; title header + PDF download; direct URL `/case-studies/vendor-compliance`; no hero infographic on VC
+- **Tool Box:** hidden (`showToolbox: false`); restore rule at `.cursor/rules/restore-toolbox-tab.mdc`
+- **Dashboards page:** 3 Tableau embeds + Q4 2025 executive summary (`dashboardExecutiveSummary` in `resume.js`)
+- **Google Analytics:** ID `G-QKVHHVPKRD` in `index.html`; custom event `resume_download` (header + hero); opt-out via `localStorage.setItem('ga_opt_out','1')`; skipped on localhost
+
+### Tableau dashboards (3 live, 1 to build)
+| # | Title | Public URL slug | CSV source |
+|---|-------|-----------------|------------|
+| 1 | Supply Chain Executive Dashboard | `SupplyChainDashboard_17813813310900/Dashboard1` | `supply_chain_executive_rollup.csv` |
+| 2 | Forecast Accuracy Dashboard | `ForecastAccuracy_17814856522190/Dashboard1` | `supply_chain_sku_master.csv` |
+| 3 | Fill Service Exception Queue | `FillServiceExceptionQue/Dashboard1` | `sku_dc_underperformer_summary.csv` |
+| 4 | Inventory & Oversupply | **NOT BUILT** | `sku_dc_oversupply_summary.csv` |
+
+### Supply chain data (`tableau-data-v2/`)
+- **Generator:** `scripts/generate_supply_chain_data.py`
+- **Scope:** 400 SKUs, 10 DCs, Jan 2023 – Dec 2025
+- **Do NOT use:** `tableau-data\` (no `-v2`), `tableau-data.zip`
+- **CSVs local only** — too large for git
+
+### Next when returning to this project
+1. **Dashboard 4** — Tableau guide for oversupply (`sku_dc_oversupply_summary.csv`)
+2. **Update executive summary** after Dashboard 4 is live
+3. Optional: restore Tool Box, GA IP filter, Dashboard 2 enhancements (WAPE trend)
+
+### Analytics access
+- **Dashboard:** https://analytics.google.com
+- **Property:** NathanielNelsonD.com · **ID:** `G-QKVHHVPKRD`
+- **Resume downloads:** Reports → Engagement → Events → `resume_download`
+
+---
 
 ## TODO — restore Tool Box tab
 
@@ -28,13 +72,14 @@ Cursor rule: `.cursor/rules/restore-toolbox-tab.mdc` (reminds the agent when edi
 | Route | File | Notes |
 |-------|------|--------|
 | `/` | `src/pages/HomePage.jsx` | Blue hero, profile photo, about, experience, skills, contact |
-| `/dashboards` | `src/pages/DashboardsPage.jsx` | Single Tableau dashboard + “About the Data” disclaimer |
-| `/case-studies` | `src/pages/CaseStudiesPage.jsx` | 3 case studies with header nav buttons + hero infographics |
+| `/dashboards` | `src/pages/DashboardsPage.jsx` | Q4 exec summary + 3 Tableau embeds + “About the Data” disclaimer |
+| `/case-studies/:studyId?` | `src/pages/CaseStudiesPage.jsx` | 3 case studies; title, PDF download, optional hero |
 | `/toolbox` | `src/pages/ToolBoxPage.jsx` | Demand Planning intro box + 4-column image grid |
 
 ## Key files
 
-- `src/data/resume.js` — `siteConfig`, experience, skills, education, case studies, `tableauProjects`
+- `src/data/resume.js` — `siteConfig`, experience, skills, education, case studies, `tableauProjects`, `dashboardExecutiveSummary`
+- `src/utils/analytics.js` — GA4 `resume_download` event, opt-out helpers
 - `src/data/toolbox.js` — toolbox image entries
 - `src/data/highlights.js` — hero stat cards
 - `src/components/Header.jsx` — nav, logo, resume download
@@ -54,13 +99,14 @@ Sticky dark header on all pages. About is active by default on home (no hash).
 ## Homepage hero (`siteConfig` in `resume.js`)
 
 - **Name:** Nathaniel Nelson
-- **Badge:** Supply Chain Executive
-- **Title:** Senior Operations and Program Leader
-- **Tagline:** Results-driven Supply Chain Executive with 13+ years… $100M+ in value… S&OP… working capital… high-performing teams…
+- **Badge:** Supply Chain · Transformation
+- **Title:** Supply Chain and Transformation Leader
+- **Tagline:** 13+ years… $100M+ enterprise value… governance modernization… (full text in `resume.js`)
 - **Email:** Nathan.Nelson.D@gmail.com
 - **Phone:** (314) 566-4757
 - **LinkedIn:** https://linkedin.com/in/NathanNel
 - **Profile photo:** `/profile.png`
+- **Resume PDF:** `public/resume.pdf` (source: `Desktop\2026 Applying\June 2026\Resume.pdf`)
 
 ## Contact section
 
@@ -90,35 +136,42 @@ Chewy roles include RRC Entitlements (Jun 2026 — Present), Vendor Compliance (
 | Dashboard | Status | Data source |
 |-----------|--------|-------------|
 | Executive (Dashboard 1) | Done, on site | `tableau-data-v2/supply_chain_executive_rollup.csv` |
-| Weekly Forecast Review (Dashboard 2) | Done, on site | `tableau-data-v2/supply_chain_sku_master.csv` |
-| Oversupply (Dashboard 3) | Not started | `sku_dc_oversupply_summary.csv` |
+| Forecast Accuracy (Dashboard 2) | Done, on site | `tableau-data-v2/supply_chain_sku_master.csv` |
+| Fill Service Exception Queue (Dashboard 3) | Done, on site | `sku_dc_underperformer_summary.csv` |
+| Inventory & Oversupply (Dashboard 4) | **Not started** | `sku_dc_oversupply_summary.csv` |
 
-**On site today:**
+**On site today (3 dashboards + Q4 exec summary on `/dashboards`):**
 
-1. **Supply Chain Dashboard** — `SupplyChainDashboard_17813813310900/Dashboard1`
-2. **Weekly Forecast Review** — `ForecastAccuracy_17814856522190/Dashboard1`
+1. **Supply Chain Executive Dashboard** — `SupplyChainDashboard_17813813310900/Dashboard1`
+2. **Forecast Accuracy Dashboard** — `ForecastAccuracy_17814856522190/Dashboard1`
+3. **Fill Service Exception Queue** — `FillServiceExceptionQue/Dashboard1`
 
-- **Native embed size:** 1600 × 927 (both dashboards)
-- **Layout:** Wide container `min(1600px, calc(100vw - 2rem))` in `DashboardsPage.jsx`
-- **Embed logic:** `TableauEmbed.jsx` renders at native size and CSS-scales to fit container width
+- **Executive summary:** `resume.js` → `dashboardExecutiveSummary` (Q4 2025, 3 paragraphs)
+- **Native embed size:** 1600 × 927
 
 **About the Data** (on dashboards page): AI-generated sample data disclaimer.
 
 ## Case Studies
 
-Three tabs in the **blue page hero** (not separate page tabs below):
+Three tabs in the **blue page hero**; direct URLs: `/case-studies`, `/case-studies/cpfr-planning`, `/case-studies/supply-planning`, `/case-studies/vendor-compliance`
 
-| Button label | ID | PDF | Hero image |
-|--------------|-----|-----|------------|
-| Supplier Collaboration | `cpfr-planning` | `/cpfr-case-study.pdf` | `/cpfr-case-study-hero.png` |
-| Supply Chain Planning | `supply-planning` | `/supply-planning-case-study.pdf` | `/supply-planning-case-study-hero.png` |
-| Supplier Governance | `vendor-compliance` | `/vendor-compliance-case-study.pdf` | `/vendor-compliance-case-study-hero.png` |
+| Button label | ID | Notes |
+|--------------|-----|-------|
+| Supplier Collaboration | `cpfr-planning` | Hero infographic + PDF |
+| Supply Chain Planning | `supply-planning` | Hero infographic + PDF |
+| Supplier Governance | `vendor-compliance` | **No hero image**; title + Download PDF; June 2026 VC PDF content ($20M value, chargeback platform) |
 
-Each case study shows: hero infographic → Challenge → Approach → Results → Impact.
+Each case study: Challenge → Approach → Results (+ `resultsIntro` where used) → Impact.
 
-**No duplicate title/description block** below the infographic (removed intentionally).
+Source PDFs: `Desktop\Website\` or `Desktop\2026 Applying\June 2026\`
 
-Source PDFs (on user's PC): `Desktop\Website\CPFR Case Study.pdf`, `Supply Case Study.pdf`, `VC Case Study.pdf`
+## Google Analytics
+
+- **Tag:** `index.html` — loads `G-QKVHHVPKRD` unless localhost or `ga_opt_out=1`
+- **Resume event:** `src/utils/analytics.js` → `resume_download` with `link_location` header/hero
+- **Opt out (browser):** `localStorage.setItem('ga_opt_out','1'); location.reload()`
+- **Opt in:** `localStorage.removeItem('ga_opt_out'); location.reload()`
+- **Console:** https://analytics.google.com — Realtime for live; Engagement → Events for downloads; Home + date filter for trends (24–48 hr lag on new properties)
 
 ## Tool Box
 

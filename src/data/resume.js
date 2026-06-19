@@ -17,8 +17,10 @@ export const siteConfig = {
 }
 
 export const about = {
-  summary:
-    'Beyond my professional responsibilities, I spend a significant amount of time studying emerging technologies and how they are reshaping business. I am particularly interested in artificial intelligence, large language models, automation, and advanced analytics, and regularly build projects to better understand their practical applications. I enjoy connecting ideas across disciplines, challenging conventional thinking, and exploring new ways organizations can improve decision making, customer experiences, and operational performance. The most rewarding part of my career has always been learning, adapting, and helping organizations navigate what\'s next.',
+  paragraphs: [
+    'Beyond my professional responsibilities, I spend a significant amount of time studying emerging technologies and how they are reshaping business. Over the course of my career, I have led business and technology initiatives spanning supply chain systems, analytics platforms, automation solutions, AI-enabled capabilities, and enterprise applications including SPARK and Omni. These experiences have reinforced my belief that competitive advantage comes from effectively combining technology, data, and operational execution.',
+    'I am particularly interested in artificial intelligence, large language models, automation, and advanced analytics, and regularly build projects to better understand their practical applications. I enjoy connecting ideas across disciplines, challenging conventional thinking, and exploring new ways organizations can improve decision making, customer experiences, and operational performance. The most rewarding part of my career has always been learning, adapting, and helping organizations navigate what\'s next.',
+  ],
 }
 
 export const experience = [

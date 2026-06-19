@@ -122,7 +122,11 @@ export default function HomePage() {
 
             <div className="about-content">
               <h2 className="section-title">About</h2>
-              <p className="about-text">{about.summary}</p>
+              {about.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 32)} className="about-text">
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </section>

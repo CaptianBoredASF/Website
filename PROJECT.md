@@ -15,12 +15,13 @@ Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 - **Deploy:** Vercel on `git push`
 
 ### Resume site (`resume-site/`)
-- **Hero:** Supply Chain and Transformation Leader (`siteConfig` in `resume.js` + `index.html` meta)
+- **Portfolio template:** multi-portfolio platform — configs in `src/portfolios/`; registry in `src/portfolios/index.js`; context via `PortfolioContext` + `usePortfolio`
+- **Hero:** Supply Chain and Transformation Leader (`portfolio.profile` in `portfolio.js`; SEO injected via `vite.config.js`)
 - **Experience:** synced to June 2026 resume PDF (`Desktop\2026 Applying\June 2026\Resume.pdf`)
 - **Case studies:** Supplier Governance (VC) fully rewritten from June 2026 PDF; title header + PDF download; direct URL `/case-studies/vendor-compliance`; no hero infographic on VC
-- **Tool Box:** hidden (`showToolbox: false`); restore rule at `.cursor/rules/restore-toolbox-tab.mdc`
-- **Dashboards page:** 3 Tableau embeds + Q4 2025 executive summary (`dashboardExecutiveSummary` in `resume.js`)
-- **Google Analytics:** ID `G-QKVHHVPKRD` in `index.html`; custom event `resume_download` (header + hero); opt-out via `localStorage.setItem('ga_opt_out','1')`; skipped on localhost
+- **Tool Box:** hidden (`portfolio.profile.showToolbox: false`); restore rule at `.cursor/rules/restore-toolbox-tab.mdc`
+- **Dashboards page:** 3 Tableau embeds + Q4 2025 executive summary (`portfolio.dashboards` in `portfolio.js`)
+- **Google Analytics:** ID in `portfolio.analytics.gaId`; injected into `index.html` at build; custom event `resume_download` (header + hero); opt-out via `localStorage.setItem('ga_opt_out','1')`; skipped on localhost
 
 ### Tableau dashboards (3 live, 1 to build)
 | # | Title | Public URL slug | CSV source |
@@ -52,7 +53,7 @@ Use `@PROJECT.md` in a new Cursor chat to restore context quickly.
 
 **Hidden:** June 2025. Tool Box is removed from header nav and homepage hero; `/toolbox` still works for preview.
 
-**To restore:** In `src/data/resume.js`, set `siteConfig.showToolbox` to `true`, then commit and push.
+**To restore:** In `src/portfolios/nathaniel.js`, set `profile.showToolbox` to `true`, then commit and push.
 
 Cursor rule: `.cursor/rules/restore-toolbox-tab.mdc` (reminds the agent when editing `resume-site/`).
 
@@ -78,10 +79,9 @@ Cursor rule: `.cursor/rules/restore-toolbox-tab.mdc` (reminds the agent when edi
 
 ## Key files
 
-- `src/data/resume.js` — `siteConfig`, experience, skills, education, case studies, `tableauProjects`, `dashboardExecutiveSummary`
-- `src/utils/analytics.js` — GA4 `resume_download` event, opt-out helpers
-- `src/data/toolbox.js` — toolbox image entries
-- `src/data/highlights.js` — hero stat cards
+- `src/portfolios/` — portfolio configs (`nathaniel.js`, `sarah.js`), schema helpers, slug registry
+- `src/context/PortfolioContext.jsx` — provides active portfolio to the component tree
+- `src/hooks/usePortfolio.js` — hook for pages and shared components
 - `src/components/Header.jsx` — nav, logo, resume download
 - `src/components/TableauEmbed.jsx` — Tableau iframe; scales native size to container width
 - `src/components/DashboardPreview.jsx` — hero profile photo (`/profile.png`)
@@ -96,12 +96,12 @@ About · Experience · Skills · Dashboards · Case Studies · ~~Tool Box~~ (hid
 
 Sticky dark header on all pages. About is active by default on home (no hash).
 
-## Homepage hero (`siteConfig` in `resume.js`)
+## Homepage hero (`portfolio.profile`)
 
 - **Name:** Nathaniel Nelson
 - **Badge:** Supply Chain · Transformation
 - **Title:** Supply Chain and Transformation Leader
-- **Tagline:** 13+ years… $100M+ enterprise value… governance modernization… (full text in `resume.js`)
+- **Tagline:** 13+ years… $100M+ enterprise value… governance modernization… (full text in `portfolio.js`)
 - **Email:** Nathan.Nelson.D@gmail.com
 - **Phone:** (314) 566-4757
 - **LinkedIn:** https://linkedin.com/in/NathanNel
@@ -116,7 +116,7 @@ Shows **email, phone, LinkedIn only** — domain and Florida location were remov
 
 - **Experience** and **Education** headings are centered (like Skills), with centered blue underline bar.
 - **Dashboards, Case Studies, Tool Box** top sections use the same **blue hero background** as the homepage hero.
-- **Skills:** single flat list (no Professional/Technical split) — see `skillGroups` in `resume.js`.
+- **Skills:** single flat list (no Professional/Technical split) — see `skillGroups` in `portfolio.js`.
 - Contact section has no “open to roles” line.
 
 ## Experience highlights
@@ -146,7 +146,7 @@ Chewy roles include RRC Entitlements (Jun 2026 — Present), Vendor Compliance (
 2. **Forecast Accuracy Dashboard** — `ForecastAccuracy_17814856522190/Dashboard1`
 3. **Fill Service Exception Queue** — `FillServiceExceptionQue/Dashboard1`
 
-- **Executive summary:** `resume.js` → `dashboardExecutiveSummary` (Q4 2025, 3 paragraphs)
+- **Executive summary:** `portfolio.js` → `dashboards.executiveSummary` (Q4 2025, 3 paragraphs)
 - **Native embed size:** 1600 × 927
 
 **About the Data** (on dashboards page): AI-generated sample data disclaimer.
@@ -230,11 +230,11 @@ Open http://localhost:5173
 ## Common tasks
 
 - **Update resume PDF:** Replace `public/resume.pdf` (source often `Desktop\2026 Applying\June 2026\Resume.pdf`).
-- **Update hero text:** Edit `siteConfig` in `src/data/resume.js` and `index.html` meta tags.
-- **New Tableau dashboard:** Update `tableauProjects` in `resume.js` with `url`, `embedWidth`, `embedHeight`. Update `SUPPLY_CHAIN.md` + `tableau-data-v2/PROJECT.md`.
+- **Update hero text:** Edit `portfolio.profile` and `portfolio.seo` in `src/data/portfolio.js`.
+- **New Tableau dashboard:** Update `portfolio.dashboards.projects` with `url`, `embedWidth`, `embedHeight`. Update `SUPPLY_CHAIN.md` + `tableau-data-v2/PROJECT.md`.
 - **Supply chain data regen:** `python tableau-data-v2/scripts/generate_supply_chain_data.py` then Replace Data Source in Tableau.
-- **New case study PDF/image:** Add to `public/`, update `caseStudies` in `resume.js`; extract hero PNG from PDF page 1 if needed.
-- **New toolbox image:** Add PNG to `public/`, add entry in `src/data/toolbox.js`.
+- **New case study PDF/image:** Add to `public/`, update `portfolio.caseStudies`; extract hero PNG from PDF page 1 if needed.
+- **New toolbox image:** Add PNG to `public/`, add entry in `portfolio.toolbox.items`.
 - **SSL error on local PC only:** Site may work elsewhere; try incognito, `ipconfig /flushdns`, or mobile data.
 
 ## Do not do unless asked

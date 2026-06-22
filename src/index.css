@@ -293,6 +293,18 @@ a:hover {
   transform: perspective(1200px) rotateY(-8deg) rotateX(4deg);
 }
 
+.hero-profile-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: unset;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.35), rgba(15, 23, 42, 0.9));
+  color: #ffffff;
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  font-size: clamp(4rem, 12vw, 6rem);
+  line-height: 1;
+}
+
 /* Dashboard preview */
 .dashboard-preview {
   width: min(100%, 430px);

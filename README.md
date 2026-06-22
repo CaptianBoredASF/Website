@@ -14,19 +14,21 @@ Open http://localhost:5173
 
 ## Customize your content
 
-Edit **`src/data/resume.js`**:
+Edit **`src/data/portfolio.js`** — the single source of truth for all site content:
 
-1. **Personal info** — name, title, email, LinkedIn, etc.
-2. **Experience & education** — your work history
-3. **Skills** — tools and technologies
-4. **Tableau projects** — replace the sample URLs with your own
+1. **`profile`** — name, title, email, LinkedIn, tagline, `showToolbox`
+2. **`assets`** — resume PDF path, profile image
+3. **`branding`** — logo initial for header monogram
+4. **`seo`** / **`analytics`** — meta tags and GA4 ID (injected into `index.html` at build time)
+5. **`experience`**, **`education`**, **`skillGroups`**, **`highlights`**
+6. **`caseStudies`**, **`dashboards`**, **`toolbox`**, **`companies`**
 
 ### Adding your Tableau dashboards
 
 1. Open your workbook on [Tableau Public](https://public.tableau.com).
 2. Click **Share** → **Copy embed code**.
 3. Copy the `url` value from the embed (looks like `https://public.tableau.com/views/WorkbookName/SheetName?:...`).
-4. Add an entry to `tableauProjects` in `resume.js`:
+4. Add an entry to `dashboards.projects` in `portfolio.js`:
 
 ```js
 {

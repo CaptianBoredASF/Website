@@ -1,25 +1,47 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { siteConfig } from '../data/resume'
+import { usePortfolio } from '../hooks/usePortfolio'
 import { trackResumeDownload } from '../utils/analytics'
 import Logo from './Logo'
-
-export const navItems = [
-  { id: 'about', label: 'About', section: 'about' },
-  { id: 'experience', label: 'Experience', section: 'experience' },
-  { id: 'skills', label: 'Skills', section: 'skills' },
-  { id: 'dashboards', label: 'Dashboards', path: '/dashboards' },
-  { id: 'case-studies', label: 'Case Studies', path: '/case-studies' },
-  { id: 'toolbox', label: 'Tool Box', path: '/toolbox' },
-  { id: 'contact', label: 'Contact', section: 'contact' },
-]
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
+function buildNavItems({ hasSection, path }) {
+  const items = []
+
+  if (hasSection('about') || hasSection('highlights')) {
+    items.push({ id: 'about', label: 'About', section: 'about' })
+  }
+  if (hasSection('experience') || hasSection('education')) {
+    items.push({ id: 'experience', label: 'Experience', section: 'experience' })
+  }
+  if (hasSection('skills')) {
+    items.push({ id: 'skills', label: 'Skills', section: 'skills' })
+  }
+  if (hasSection('dashboards')) {
+    items.push({ id: 'dashboards', label: 'Dashboards', path: path('dashboards') })
+  }
+  if (hasSection('caseStudies')) {
+    items.push({ id: 'case-studies', label: 'Case Studies', path: path('case-studies') })
+  }
+  if (hasSection('toolbox')) {
+    items.push({ id: 'toolbox', label: 'Tool Box', path: path('toolbox') })
+  }
+  if (hasSection('contact')) {
+    items.push({ id: 'contact', label: 'Contact', section: 'contact' })
+  }
+
+  return items
+}
+
 export default function Header() {
   const location = useLocation()
   const navigate = useNavigate()
+  const { portfolio, hasSection, path } = usePortfolio()
+  const { assets } = portfolio
+  const homePath = path()
+  const navItems = buildNavItems({ hasSection, path })
 
   function handleNav(item) {
     if (item.path) {
@@ -27,17 +49,20 @@ export default function Header() {
       return
     }
 
-    if (location.pathname === '/') {
+    if (location.pathname === homePath) {
       scrollTo(item.section)
       return
     }
 
-    navigate(`/#${item.section}`)
+    navigate(`${homePath}#${item.section}`)
   }
 
   function isActive(item) {
-    if (item.path) return location.pathname === item.path
-    if (location.pathname !== '/') return false
+    if (item.path) {
+      return location.pathname === item.path
+    }
+
+    if (location.pathname !== homePath) return false
     if (item.section === 'about' && !location.hash) return true
     return location.hash === `#${item.section}`
   }
@@ -45,14 +70,12 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link to="/" className="logo-mark" aria-label="Home">
+        <Link to={homePath} className="logo-mark" aria-label="Home">
           <Logo />
         </Link>
 
         <nav className="nav">
-          {navItems
-            .filter((item) => siteConfig.showToolbox || item.id !== 'toolbox')
-            .map((item) => (
+          {navItems.map((item) => (
             <button
               key={item.id}
               type="button"
@@ -64,14 +87,16 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          className="btn btn-header-resume"
-          href={siteConfig.resumePdf}
-          download
-          onClick={() => trackResumeDownload('header')}
-        >
-          <span aria-hidden="true">↓</span> Resume
-        </a>
+        {hasSection('resume') ? (
+          <a
+            className="btn btn-header-resume"
+            href={assets.resumePdf}
+            download
+            onClick={() => trackResumeDownload('header', portfolio)}
+          >
+            <span aria-hidden="true">↓</span> Resume
+          </a>
+        ) : null}
       </div>
     </header>
   )

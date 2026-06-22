@@ -10,17 +10,20 @@ The **Tool Box** nav item and homepage hero button are hidden (June 2025).
 
 ## Restore when ready
 
-In `src/data/resume.js`, set:
+In `src/portfolios/nathaniel.js`, set:
 
 ```js
-showToolbox: true,
+profile: {
+  // ...
+  showToolbox: true,
+},
 ```
 
 That re-enables the header tab and homepage link. The `/toolbox` route and page are still live at `/toolbox` for preview.
 
 ## Files touched when hiding
 
-- `src/data/resume.js` — `siteConfig.showToolbox`
+- `src/portfolios/nathaniel.js` — `profile.showToolbox`
 - `src/components/Header.jsx` — filters toolbox from nav
 - `src/pages/HomePage.jsx` — conditional hero button
 

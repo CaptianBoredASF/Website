@@ -1,9 +1,17 @@
-import { toolboxItems } from '../data/toolbox'
+import { Navigate } from 'react-router-dom'
+import { usePortfolio } from '../hooks/usePortfolio'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function ToolBoxPage() {
-  const slots = Array.from({ length: 4 }, (_, index) => toolboxItems[index] ?? null)
+  const { portfolio, hasSection, path } = usePortfolio()
+  const { pages, toolbox } = portfolio
+
+  if (!hasSection('toolbox')) {
+    return <Navigate to={path()} replace />
+  }
+
+  const slots = Array.from({ length: toolbox.slotCount }, (_, index) => toolbox.items[index] ?? null)
 
   return (
     <>
@@ -12,28 +20,21 @@ export default function ToolBoxPage() {
       <main>
         <section className="section page-hero">
           <div className="container page-hero-inner">
-            <p className="eyebrow">Resources</p>
-            <h1 className="section-title">Tool Box</h1>
-            <p className="section-lead">
-              Frameworks, roadmaps, and practical tools for supply chain and operations leaders.
-            </p>
+            <p className="eyebrow">{pages.toolbox.eyebrow}</p>
+            <h1 className="section-title">{pages.toolbox.title}</h1>
+            <p className="section-lead">{pages.toolbox.lead}</p>
           </div>
         </section>
 
         <section className="section section-alt">
           <div className="container">
             <div className="toolbox-grid-wrap">
-              <div className="toolbox-intro-box">
-                <h2 className="toolbox-intro-title">Demand Planning</h2>
-                <p className="toolbox-intro-text">
-                  Demand planning serves as the decision engine of the supply chain, connecting customer
-                  demand, inventory strategy, supplier execution, and financial objectives. High-performing
-                  organizations leverage advanced analytics, forecast governance, and scenario-based planning
-                  to optimize working capital, protect service levels, and mitigate supply risk. The result
-                  is a more responsive, scalable operation capable of supporting sustainable growth in dynamic
-                  market environments.
-                </p>
-              </div>
+              {toolbox.intro ? (
+                <div className="toolbox-intro-box">
+                  <h2 className="toolbox-intro-title">{toolbox.intro.title}</h2>
+                  <p className="toolbox-intro-text">{toolbox.intro.text}</p>
+                </div>
+              ) : null}
 
               <div className="toolbox-grid">
                 {slots.map((item, index) => (

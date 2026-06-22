@@ -116,7 +116,7 @@ Use `@SUPPLY_CHAIN.md` or `@PROJECT.md` in a new Cursor chat to restore context.
 | 3 | Fill Service Exception Queue | `sku_dc_underperformer_summary.csv` | **Done, on site** | `FillServiceExceptionQue/Dashboard1` |
 | 4 | Inventory & Oversupply Queue | `sku_dc_oversupply_summary.csv` | **Guide ready — build in Tableau** | — |
 
-**Site:** `resume-site/src/data/resume.js` → `tableauProjects` + `dashboardExecutiveSummary`  
+**Site:** `resume-site/src/data/portfolio.js` → `dashboards.projects` + `dashboards.executiveSummary`  
 **Page:** `/dashboards` — Q4 2025 executive summary above all embeds (`DashboardsPage.jsx`)
 
 ---
@@ -218,7 +218,7 @@ Same as Dashboard 3: use **Text** marks with measures on **Text**, not Measure V
 
 ## Executive writeup (on site)
 
-**Location:** `resume.js` → `dashboardExecutiveSummary`  
+**Location:** `portfolio.js` → `dashboards.executiveSummary`  
 **Title:** Executive Summary — Q4 2025 (Oct–Dec)  
 **Tone:** Raw facts, outlier callouts, fix actions — not academic/vendor comparisons.
 
@@ -233,7 +233,7 @@ Same as Dashboard 3: use **Text** marks with measures on **Text**, not Measure V
 
 ## Resume site (other context)
 
-- **Hero:** Supply Chain and Transformation Leader (`siteConfig`)
+- **Hero:** Supply Chain and Transformation Leader (`portfolio.profile`)
 - **Tool Box:** hidden (`showToolbox: false`) — restore via `.cursor/rules/restore-toolbox-tab.mdc`
 - **GA4:** `G-QKVHHVPKRD` in `index.html`; `resume_download` event; opt-out via `localStorage ga_opt_out=1`
 - **Case studies:** 3 tabs; Supplier Governance updated from June 2026 VC PDF

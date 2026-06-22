@@ -1,27 +1,35 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { caseStudies } from '../data/resume'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { usePortfolio } from '../hooks/usePortfolio'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-
-function resolveStudyId(studyId) {
-  if (!studyId) return caseStudies[0]?.id ?? null
-  return caseStudies.some((item) => item.id === studyId) ? studyId : caseStudies[0]?.id ?? null
-}
 
 export default function CaseStudiesPage() {
   const { studyId } = useParams()
   const navigate = useNavigate()
+  const { portfolio, hasSection, path } = usePortfolio()
+  const { caseStudies, pages } = portfolio
+  const caseStudiesPath = path('case-studies')
+
+  function resolveStudyId(id) {
+    if (!id) return caseStudies[0]?.id ?? null
+    return caseStudies.some((item) => item.id === id) ? id : caseStudies[0]?.id ?? null
+  }
+
   const [activeStudy, setActiveStudy] = useState(() => resolveStudyId(studyId))
   const study = caseStudies.find((item) => item.id === activeStudy)
 
   useEffect(() => {
     setActiveStudy(resolveStudyId(studyId))
-  }, [studyId])
+  }, [studyId, caseStudies])
+
+  if (!hasSection('caseStudies')) {
+    return <Navigate to={path()} replace />
+  }
 
   function selectStudy(id) {
     setActiveStudy(id)
-    navigate(id === caseStudies[0]?.id ? '/case-studies' : `/case-studies/${id}`, {
+    navigate(id === caseStudies[0]?.id ? caseStudiesPath : `${caseStudiesPath}/${id}`, {
       replace: true,
     })
   }
@@ -35,11 +43,9 @@ export default function CaseStudiesPage() {
       <main>
         <section className="section page-hero">
           <div className="container page-hero-inner">
-            <p className="eyebrow">Portfolio</p>
-            <h1 className="section-title">Case Studies</h1>
-            <p className="section-lead">
-              Selected programs highlighting strategy, execution, and measurable business impact.
-            </p>
+            <p className="eyebrow">{pages.caseStudies.eyebrow}</p>
+            <h1 className="section-title">{pages.caseStudies.title}</h1>
+            <p className="section-lead">{pages.caseStudies.lead}</p>
             <nav className="case-study-nav" aria-label="Case study topics">
               {caseStudies.map((item) => (
                 <button

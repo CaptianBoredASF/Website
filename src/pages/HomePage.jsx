@@ -1,13 +1,6 @@
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import {
-  siteConfig,
-  about,
-  experience,
-  education,
-  skillGroups,
-} from '../data/resume'
-import { highlights } from '../data/highlights'
+import { usePortfolio } from '../hooks/usePortfolio'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import DashboardPreview from '../components/DashboardPreview'
@@ -51,6 +44,10 @@ function HighlightIcon({ type }) {
 
 export default function HomePage() {
   const location = useLocation()
+  const { portfolio, hasSection, path } = usePortfolio()
+  const { profile, assets, about, highlights, experience, education, skillGroups } = portfolio
+  const showAboutSection = hasSection('highlights') || hasSection('about')
+  const showExperienceSection = hasSection('experience') || hasSection('education')
 
   useEffect(() => {
     if (!location.hash) return
@@ -68,32 +65,40 @@ export default function HomePage() {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-content">
-              <p className="hero-badge">
-                <span className="hero-badge-dot" />
-                {siteConfig.heroBadge}
-              </p>
+              {profile.heroBadge ? (
+                <p className="hero-badge">
+                  <span className="hero-badge-dot" />
+                  {profile.heroBadge}
+                </p>
+              ) : null}
               <h1>
-                <span className="hero-name">{siteConfig.name}</span>
-                <span className="hero-title">{siteConfig.title}</span>
+                <span className="hero-name">{profile.name}</span>
+                <span className="hero-title">{profile.title}</span>
               </h1>
-              <p className="hero-tagline">{siteConfig.tagline}</p>
+              {profile.tagline ? <p className="hero-tagline">{profile.tagline}</p> : null}
               <div className="hero-actions">
-                <a
-                  className="btn btn-primary"
-                  href={siteConfig.resumePdf}
-                  download
-                  onClick={() => trackResumeDownload('hero')}
-                >
-                  <span aria-hidden="true">↓</span> Download Resume
-                </a>
-                <Link to="/dashboards" className="btn btn-outline-light">
-                  <span aria-hidden="true">▦</span> View Dashboards
-                </Link>
-                <Link to="/case-studies" className="btn btn-outline-light">
-                  <span aria-hidden="true">☰</span> Case Studies
-                </Link>
-                {siteConfig.showToolbox ? (
-                  <Link to="/toolbox" className="btn btn-outline-light">
+                {hasSection('resume') ? (
+                  <a
+                    className="btn btn-primary"
+                    href={assets.resumePdf}
+                    download
+                    onClick={() => trackResumeDownload('hero', portfolio)}
+                  >
+                    <span aria-hidden="true">↓</span> Download Resume
+                  </a>
+                ) : null}
+                {hasSection('dashboards') ? (
+                  <Link to={path('dashboards')} className="btn btn-outline-light">
+                    <span aria-hidden="true">▦</span> View Dashboards
+                  </Link>
+                ) : null}
+                {hasSection('caseStudies') ? (
+                  <Link to={path('case-studies')} className="btn btn-outline-light">
+                    <span aria-hidden="true">☰</span> Case Studies
+                  </Link>
+                ) : null}
+                {hasSection('toolbox') ? (
+                  <Link to={path('toolbox')} className="btn btn-outline-light">
                     <span aria-hidden="true">🛠</span> Tool Box
                   </Link>
                 ) : null}
@@ -106,116 +111,138 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="about" className="section about-section">
-          <div className="container about-grid">
-            <div className="highlights-grid">
-              {highlights.map((item) => (
-                <article key={item.id} className={`highlight-card highlight-${item.id}`}>
-                  <div className="highlight-icon">
-                    <HighlightIcon type={item.icon} />
-                  </div>
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                </article>
-              ))}
-            </div>
-
-            <div className="about-content">
-              <h2 className="section-title">About</h2>
-              {about.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)} className="about-text">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" className="section experience-section">
-          <div className="container">
-            <h2 className="experience-heading">Experience</h2>
-            <div className="experience-timeline">
-              {experience.map((job) => (
-                <article key={`${job.company}-${job.period}`} className="experience-entry">
-                  <div className="experience-marker" aria-hidden="true" />
-                  <div className="experience-card">
-                    <div className="experience-card-left">
-                      <CompanyLogo company={job.company} />
-                      <h3>{job.role}</h3>
-                      <p className="experience-meta">
-                        <span className="experience-company">{job.company}</span>
-                        <span className="experience-divider">|</span>
-                        <span className="experience-period">{job.period}</span>
-                      </p>
-                    </div>
-                    <div className="experience-card-right">
-                      {job.highlights.length > 0 ? (
-                        <>
-                          <p className="experience-summary">
-                            <HighlightText text={job.highlights[0]} />
-                          </p>
-                          {job.highlights.length > 1 && (
-                            <ul className="experience-bullets">
-                              {job.highlights.slice(1).map((item) => (
-                                <li key={item}>
-                                  <HighlightText text={item} />
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </>
-                      ) : (
-                        <p className="experience-summary muted">Role details available upon request.</p>
-                      )}
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <h3 className="education-heading">Education</h3>
-            <div className="education-grid">
-              {education.map((item) => (
-                <div key={item.school} className="education-card">
-                  <strong>{item.degree}</strong>
-                  <span>{item.school}</span>
-                  <span className="muted">{item.year}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="skills" className="section">
-          <div className="container">
-            <h2 className="section-title section-title-center">Skills</h2>
-            {skillGroups.map((group, index) => (
-              <div key={group.label ?? `skills-${index}`} className="skill-group">
-                {group.label && <h3 className="subsection-title">{group.label}</h3>}
-                <div className="skills-grid">
-                  {group.skills.map((skill) => (
-                    <span key={skill} className="skill-pill">{skill}</span>
+        {showAboutSection ? (
+          <section id="about" className="section about-section">
+            <div className="container about-grid">
+              {hasSection('highlights') ? (
+                <div className="highlights-grid">
+                  {highlights.map((item) => (
+                    <article key={item.id} className={`highlight-card highlight-${item.id}`}>
+                      <div className="highlight-icon">
+                        <HighlightIcon type={item.icon} />
+                      </div>
+                      <strong>{item.value}</strong>
+                      <span>{item.label}</span>
+                    </article>
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ) : null}
 
-        <section id="contact" className="section section-alt">
-          <div className="container contact-inner">
-            <h2 className="section-title section-title-center">Contact</h2>
-            <div className="contact-links">
-              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-              {siteConfig.phone && (
-                <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}>{siteConfig.phone}</a>
-              )}
-              {siteConfig.linkedin && (
-                <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              )}
+              {hasSection('about') ? (
+                <div className="about-content">
+                  <h2 className="section-title">About</h2>
+                  {about.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 32)} className="about-text">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
+
+        {showExperienceSection ? (
+          <section id="experience" className="section experience-section">
+            <div className="container">
+              {hasSection('experience') ? (
+                <>
+                  <h2 className="experience-heading">Experience</h2>
+                  <div className="experience-timeline">
+                    {experience.map((job) => (
+                      <article key={`${job.company}-${job.period}`} className="experience-entry">
+                        <div className="experience-marker" aria-hidden="true" />
+                        <div className="experience-card">
+                          <div className="experience-card-left">
+                            <CompanyLogo company={job.company} />
+                            <h3>{job.role}</h3>
+                            <p className="experience-meta">
+                              <span className="experience-company">{job.company}</span>
+                              <span className="experience-divider">|</span>
+                              <span className="experience-period">{job.period}</span>
+                            </p>
+                          </div>
+                          <div className="experience-card-right">
+                            {job.highlights.length > 0 ? (
+                              <>
+                                <p className="experience-summary">
+                                  <HighlightText text={job.highlights[0]} />
+                                </p>
+                                {job.highlights.length > 1 && (
+                                  <ul className="experience-bullets">
+                                    {job.highlights.slice(1).map((item) => (
+                                      <li key={item}>
+                                        <HighlightText text={item} />
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </>
+                            ) : (
+                              <p className="experience-summary muted">Role details available upon request.</p>
+                            )}
+                          </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+
+              {hasSection('education') ? (
+                <>
+                  <h3 className="education-heading">Education</h3>
+                  <div className="education-grid">
+                    {education.map((item) => (
+                      <div key={item.school} className="education-card">
+                        <strong>{item.degree}</strong>
+                        <span>{item.school}</span>
+                        <span className="muted">{item.year}</span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
+
+        {hasSection('skills') ? (
+          <section id="skills" className="section">
+            <div className="container">
+              <h2 className="section-title section-title-center">Skills</h2>
+              {skillGroups.map((group, index) => (
+                <div key={group.label ?? `skills-${index}`} className="skill-group">
+                  {group.label ? <h3 className="subsection-title">{group.label}</h3> : null}
+                  <div className="skills-grid">
+                    {group.skills.map((skill) => (
+                      <span key={skill} className="skill-pill">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {hasSection('contact') ? (
+          <section id="contact" className="section section-alt">
+            <div className="container contact-inner">
+              <h2 className="section-title section-title-center">Contact</h2>
+              <div className="contact-links">
+                {profile.email ? (
+                  <a href={`mailto:${profile.email}`}>{profile.email}</a>
+                ) : null}
+                {profile.phone ? (
+                  <a href={`tel:${profile.phone.replace(/\D/g, '')}`}>{profile.phone}</a>
+                ) : null}
+                {profile.linkedin ? (
+                  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                ) : null}
+              </div>
+            </div>
+          </section>
+        ) : null}
       </main>
 
       <Footer />

@@ -1,4 +1,9 @@
+import { usePortfolio } from '../hooks/usePortfolio'
+
 export default function Logo() {
+  const { portfolio } = usePortfolio()
+  const initial = portfolio.branding.logoInitial
+
   return (
     <svg
       className="logo-svg"
@@ -14,7 +19,7 @@ export default function Logo() {
         fontFamily="'Instrument Serif', Georgia, 'Times New Roman', serif"
         fontSize="38"
       >
-        N
+        {initial}
       </text>
       <text
         x="2"
@@ -23,7 +28,7 @@ export default function Logo() {
         fontFamily="'Instrument Serif', Georgia, 'Times New Roman', serif"
         fontSize="38"
       >
-        N
+        {initial}
       </text>
     </svg>
   )

@@ -14,7 +14,7 @@ export default definePortfolio({
     phone: '(314) 566-4757',
     location: 'Fort Lauderdale, FL',
     linkedin: 'https://linkedin.com/in/NathanNel',
-    showToolbox: false,
+    showToolbox: true,
   },
 
   assets: {
